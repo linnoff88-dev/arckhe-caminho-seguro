@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!-- caminho-seguro guia PT (fonte). EN/ES: copias traduzidas em en/ e es/. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>caminho-seguro — the world will stop frequently; your family can get through it safely</title>
+<meta name="description" content="The safe path: 5 free steps to get through the coming years of instability — a 72-hour kit, not relying only on being online, digital protection, health and family, and working with AI.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/caminho-seguro/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/caminho-seguro/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/caminho-seguro/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;height:auto;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  .techhead{background:var(--bg2);border-top:3px solid var(--amb);padding:58px 0 8px}
+  .techhead h2{font-family:Sora;margin:.3em 0 0}
+  .techzone{background:var(--bg2)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🧭</span> caminho-seguro</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#porque">Why now</a>
+    <a class="sec" href="#passos">The 5 steps</a>
+    <a class="sec" href="#trabalho">Work</a>
+    <a class="sec" href="#tecnico">Kit (technical)</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <a class="btn" href="https://github.com/inematds/caminho-seguro" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Free kit · 5 steps</span>
+      <h1>The world will stop frequently. <span class="amb">The safe path</span> will guide your family through it.</h1>
+      <p class="lead">Could you get through three days without power, internet, or banking? Extreme weather, digital attacks, and AI changing the way we work are already here. Those who prepare now can get through it calmly.</p>
+      <div class="cta">
+        <a class="btn" href="#video">Understand it in 5 minutes</a>
+        <a class="btn ghost" href="https://github.com/inematds/caminho-seguro" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="The safe path: the world will stop frequently, and your family can get through it safely"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">In brief</span>
+  <p>The safe path is a free INEMA guide to help you and your family get through the coming years of instability: floods, tornadoes, and heat with a very strong El Niño; blackouts; attacks on systems and data leaks; and work changing with robots and artificial intelligence. There are <strong>5 simple steps</strong>: put together a home kit, don’t rely only on being online, protect your accounts, look after your health and make a plan with your family, and prepare your work for AI. You don’t need anything to read the guide. If you want, a small program can put together a plan for your home in one minute.</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="The safe path: 72-hour kit, offline readiness, digital protection, health and family, working with AI, a plan in 1 minute" loading="lazy" style="width:100%;display:block"></figure>
+</div></section>
+
+<section id="video"><div class="wrap">
+  <span class="chip">Video</span>
+  <h2>Understand it in a few minutes</h2>
+  <!-- VIDEO: entra o explicavideo do projeto quando publicado -->
+  <p class="sub">The explainer video for this guide is in production and will appear here as soon as it is published.</p>
+</div></section>
+
+<section id="porque"><div class="wrap">
+  <span class="chip">Why now</span>
+  <h2>When one system stops, <span class="amb">everything stops</span></h2>
+  <p class="sub">Just this week in November 2026, three warnings that the world will stop more often—and that prepared families suffer less.</p>
+  <div class="grid g3">
+    <div class="card"><h3>✈️ Flights stopped across the US</h3><p>On 13/11/2026, the FAA suspended departures at every airport in the United States because of an <strong>air traffic control communications failure</strong> (it was not an attack). Thousands of flights were delayed or canceled. If the world’s richest country can be brought to a halt by a failure, your city can too.</p></div>
+    <div class="card"><h3>💻 Attacks in Brazil</h3><p>The Port of Santos had its systems taken down in an attack (since 06/11). Caixa Vida e Previdência exposed data belonging to around <strong>7.6 million</strong> customers. The National Treasury exposed <strong>30,000</strong> records and <strong>4,000 Pix keys</strong>. The danger now is a scammer who has your correct name and CPF.</p></div>
+    <div class="card"><h3>🌧️ Very strong El Niño</h3><p>NOAA, the US weather agency, gave a <strong>more than 90% chance</strong> of a very strong El Niño between late 2026 and early 2027. In Brazil: more rain, storms, and flooding in the South; heat, drought, and fires in the Center-North. Greater risk does not mean disaster is certain, but it is time to prepare.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>🧭 A perspective from someone who monitors the climate</h3><p>"I’ve worked in technology for 40 years, monitor the climate, have been to Antarctica and the Arctic, and have worked with businesses, education, and government. My reading is that <strong>five very turbulent years are ahead</strong>, almost like a war: climate, attacks, power struggles, factions, and an economy changing with robots and AI. And today I can say: we can get through this difficult time." — Nei Maldaner, INEMA</p></div>
+</div></section>
+
+<section id="passos"><div class="wrap">
+  <span class="chip">The path</span>
+  <h2>The <span class="amb">5 steps</span> of the safe path</h2>
+  <p class="sub">Follow them in order. Each step fits into a weekend. The details and checklist for each are in the kit (<a href="#guia">how to use it ↓</a>).</p>
+  <div class="flow"><span>1 · Home</span><span class="arr">→</span><span>2 · Offline</span><span class="arr">→</span><span>3 · Digital</span><span class="arr">→</span><span>4 · Health and people</span><span class="arr">→</span><span>5 · Work</span></div>
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card"><h3>🏠 1. Home: a 72-hour kit, then 14 days</h3><p>This is what Civil Defense (Brazil) recommends (and the European Union too, since 2025): <strong>2 liters of water per person per day</strong>, nonperishable food, medicines, a flashlight and battery-powered radio, a portable charger, documents in a waterproof bag, and contacts on paper. A family of 4 needs 24 liters of water for 3 days. Then gradually build up to 14 days and review every 6 months.</p></div>
+    <div class="card"><h3>📴 2. Don’t rely only on being online</h3><p>If Pix, your banking app, or the internet goes down, how will you buy food? Cash for a few days of expenses (don’t withdraw all your money from the bank), contacts, prescriptions, and documents on paper, maps and information saved offline, and 14 days of food already at home.</p></div>
+    <div class="card"><h3>🔐 3. Digital protection</h3><p>Your data may already have been leaked. Be wary of anyone who knows your name and CPF and asks for information, a password, or a Pix payment. Turn on <strong>two-step verification through an app</strong> (a code generated only by your phone), not SMS, for your email, bank, and WhatsApp. Use a different password for every account. Check the accounts and Pix keys in your name through the Central Bank’s Registrato service.</p></div>
+    <div class="card"><h3>❤️ 4. Health and people</h3><p>Keep a 14-day supply of ongoing medications and store the prescription. <strong>Make a family plan</strong>: a meeting place, who picks up the children, a relative outside the city whom everyone will contact, and how to communicate without internet. Trusted neighbors. And Civil Defense alerts on your phone: text your ZIP code to <strong>40199</strong>.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>🗺️ Every region has its own risks</h3><p>The kit includes checklists for floods and landslides, windstorms and tornadoes, heat and fires, extended power outages, digital scams, and supply shortages. Choose the ones for your city, and your plan will include only what matters to you.</p></div>
+</div></section>
+
+<section id="trabalho"><div class="wrap">
+  <span class="chip">Step 5</span>
+  <h2>Get to the other side <span class="amb">with a job</span></h2>
+  <p class="sub">Robots and artificial intelligence will take over a large part of the work. Companies that don’t prepare will have to change or fail. Those who prepare will change roles; those who wait will be laid off.</p>
+  <div class="grid g3">
+    <div class="card"><h3>📏 Find out your AI level</h3><p>The kit’s free certificate at <a href="https://inematds.github.io/nivel-ia/guia/#certificado" target="_blank" rel="noopener">nivel-ia</a> shows how much of your work AI already does, on a 5-step scale (AL1 to AL5). If you only use ChatGPT in a browser, use the paper worksheet. It is a measurement, not a diploma.</p></div>
+    <div class="card"><h3>📈 Evidence from someone who measured</h3><p>Nei measured his own work over 90 days: <strong>48.9%</strong> is already driven by AI, and in ten weeks it rose from 11% to 61%. This is a measurement from his machine, not a countrywide statistic—but it shows how quickly things are changing.</p></div>
+    <div class="card"><h3>🎓 Learn for free</h3><p>Write down your field and three tasks you do every week. Choose one for AI to do with you this month. Free courses, projects, and videos are available at <a href="https://inema.club" target="_blank" rel="noopener">inema.club</a>, right on the internet.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>💬 What about you?</h3><p>What field do you work in, and what are you already doing to prepare? Share it with the <a href="https://inema.club" target="_blank" rel="noopener">inema.club</a> community.</p></div>
+</div></section>
+
+<div id="tecnico" class="techhead"><div class="wrap">
+  <span class="chip">Technical section</span>
+  <h2>The kit: <span class="amb">for anyone who wants a ready-made home plan</span></h2>
+  <p class="sub">From here on, this is the technical section: download the kit and run a simple program that builds your plan. You <strong>don’t need</strong> this section to understand and follow what’s above.</p>
+</div></div>
+
+<div class="techzone">
+<section id="oque"><div class="wrap">
+  <span class="chip">What it is</span>
+  <h2>A plan for your home <span class="amb">in one minute</span></h2>
+  <p class="sub">The kit is a folder with the 5 steps in checklist form and a Python program that does the calculations for you. It works offline: nothing leaves your computer.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🧮 The right calculations</h3><p>Water (2 L per person per day) and food (2,000 kcal per person per day) for 72 hours and 14 days, in 5 L water jugs and kilograms of dry food.</p></div>
+    <div class="card"><h3>🗺️ Only your risks</h3><p>Choose floods, windstorms, heat, power outages, digital risks, or conflict; the plan includes a checklist for each. Children, older adults, pets, and medications are included when you say they apply.</p></div>
+    <div class="card"><h3>📌 Fridge sheet</h3><p>Civil Defense 199, Fire Department 193, SAMU 192, a meeting place and who picks up the children, plus the date of the next review (6 months).</p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Requirements</span>
+  <h2>What you need</h2>
+  <p class="sub">Just Python 3.9 or later (already included on Linux and Mac; on Windows, install it from python.org). No extra libraries.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Check Python</h3><p>Open the terminal and run:</p><pre><span class="k">python3 --version</span>  <span class="c"># Python 3.9 or later</span></pre></div>
+    <div class="card"><h3>No terminal?</h3><p>Open the files in the <code>passos/</code> folder on GitHub and follow the checklists by hand. The calculation: 2 L of water × people × days.</p></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">How to use</span>
+  <h2>Step by step</h2>
+  <p class="sub">From scratch to a plan printed for your fridge.</p>
+  <div class="step"><div class="b">1</div><div>
+    <h3>Download the kit</h3>
+    <p>Using git, or the "Code → Download ZIP" button on GitHub.</p>
+<pre><span class="k">git clone https://github.com/inematds/caminho-seguro</span>
+<span class="k">cd caminho-seguro</span></pre>
+  </div></div>
+  <div class="step"><div class="b">2</div><div>
+    <h3>Answer the questions</h3>
+    <p>How many people, children, older adults, pets, whether anyone takes ongoing medication, and the risks in your area. Press Enter to accept the default.</p>
+<pre><span class="k">python3 caminho.py</span>  <span class="c"># saves meu-plano.md</span></pre>
+  </div></div>
+  <div class="step"><div class="b">3</div><div>
+    <h3>Or enter everything at once</h3>
+    <p>Possible risks: <code>enchente</code>, <code>vendaval</code>, <code>calor</code>, <code>apagao</code>, <code>digital</code>, <code>conflito</code>.</p>
+<pre><span class="k">python3 caminho.py --nome "Família Silva" --pessoas 4 --criancas 1 --remedios --riscos enchente,apagao,digital --saida meu-plano.md</span>
+<span class="c"># ok: meu-plano.md — 72 h: 24 L de água; revise em 6 meses</span>
+<span class="k">python3 caminho.py --listar-riscos</span></pre>
+  </div></div>
+  <div class="step"><div class="b">4</div><div>
+    <h3>Print it and check items off</h3>
+    <p>Open <code>meu-plano.md</code> (in any text editor), print it, put the sheet on the fridge, and check off the items. Details for each step are in <code>passos/1-casa-72h.md</code> through <code>passos/5-trabalho-ia.md</code>.</p>
+  </div></div>
+  <div class="step"><div class="b">5</div><div>
+    <h3>Review every 6 months</h3>
+    <p>The plan includes the date. Run it again if your family changes. If you work with the code, the tests are:</p>
+<pre><span class="k">python3 -m pytest -q tests</span>  <span class="c"># 16 passed</span></pre>
+  </div></div>
+</div></section>
+
+<section id="exemplos"><div class="wrap">
+  <span class="chip">Example</span>
+  <h2>A family of 4</h2>
+  <p class="sub">Generated with <code>--pessoas 4 --criancas 1 --idosos 1 --pets 1 --remedios --riscos enchente,apagao,digital</code> (file <a href="https://github.com/inematds/caminho-seguro/blob/main/exemplo/meu-plano-exemplo.md" target="_blank" rel="noopener">exemplo/meu-plano-exemplo.md</a>).</p>
+  <div class="card"><table style="width:100%;border-collapse:collapse;font-size:.92rem">
+    <tr><th style="text-align:left;padding:6px"></th><th style="text-align:left;padding:6px">72 hours (minimum)</th><th style="text-align:left;padding:6px">14 days (target)</th></tr>
+    <tr><td style="padding:6px">Drinking water</td><td style="padding:6px">24 L (5 jugs of 5 L)</td><td style="padding:6px">112 L (23 jugs of 5 L)</td></tr>
+    <tr><td style="padding:6px">Nonperishable food</td><td style="padding:6px">~24,000 kcal (≈ 6.9 kg of dry food)</td><td style="padding:6px">~112,000 kcal (≈ 32 kg of dry food)</td></tr>
+  </table><p style="margin-top:10px">Also: diapers and milk for the child, glasses and medications for the older adult, pet food, prescriptions in the kit, and checklists for floods, power outages, and digital scams.</p></div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Related kits</span>
+  <h2>Go further</h2>
+  <p class="sub">The safe path brings together what other free INEMA kits already do.</p>
+  <div class="phase"><div class="tag">Offline</div><div class="d"><strong><a href="https://inematds.github.io/sobreviver-ia/guia/" target="_blank" rel="noopener">sobreviver-ia</a></strong><span>Wikipedia and an AI on your computer, without internet; an audit of your accounts; a 90-day plan.</span></div></div>
+  <div class="phase"><div class="tag">Work</div><div class="d"><strong><a href="https://inematds.github.io/nivel-ia/guia/" target="_blank" rel="noopener">nivel-ia</a></strong><span>Your AI level certificate (AL1 to AL5), with projections for 1, 3, and 6 months.</span></div></div>
+  <div class="phase"><div class="tag">Climate</div><div class="d"><strong>Videos of extreme events</strong><span>How to protect yourself from tornadoes, floods, and heat, on INEMA’s extreme events channel.</span></div></div>
+  <p class="sub" style="margin-top:18px">This does not replace guidance from your city’s Civil Defense (Brazil). This is not financial or medical advice.</p>
+</div></section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Python 3</div><div class="pill">offline</div><div class="pill">MIT</div>
+    <p style="margin-top:18px">caminho-seguro · free INEMA kit · 13/11/2026 ·
+      <a href="https://github.com/inematds/caminho-seguro">inematds/caminho-seguro</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='caminho-seguro-theme'; // troque caminho-seguro pelo nome do projeto
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html># caminho-seguro
+
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
+**The world will face disruptions often, and those who prepare will get through them with their families safe.**  
+Caminho Seguro is a free INEMA kit with 5 steps to get through the coming years of instability: extreme weather (a very strong El Niño, floods, tornadoes, heat), digital attacks, conflicts, and work changing with robots and AI.
+
+📖 Guide: **https://inematds.github.io/caminho-seguro/guia/en/**
+
+![Guide banner](guia/assets/banner-en.jpg)
+
+## The 5 steps
+
+| Step | What it covers | File |
+|---|---|---|
+| 1. Home | The Civil Defense 72-hour kit (2 L of water per person per day), then 14 days | [passos/1-casa-72h.md](passos/1-casa-72h.md) |
+| 2. Offline | Cash for a few days, paper, offline information, food that doesn’t depend on an app | [passos/2-fora-do-online.md](passos/2-fora-do-online.md) |
+| 3. Digital | Scams after a data breach, two-step verification by app, Registrato | [passos/3-digital.md](passos/3-digital.md) |
+| 4. Health and people | Extra medication, a family plan, neighbors, alert 40199 | [passos/4-saude-e-pessoas.md](passos/4-saude-e-pessoas.md) |
+| 5. Work | A certificate of your AI level, your next task for AI, free inema.club | [passos/5-trabalho-ia.md](passos/5-trabalho-ia.md) |
+
+## Your plan in 1 minute
+
+```bash
+git clone https://github.com/inematds/caminho-seguro && cd caminho-seguro
+python3 caminho.py            # answers 7 questions and saves meu-plano.md
+```
+
+Or run it directly: `python3 caminho.py --pessoas 4 --criancas 1 --riscos enchente,apagao,digital --saida meu-plano.md`.  
+Risks: `enchente`, `vendaval`, `calor`, `apagao`, `digital`, `conflito` (`--listar-riscos`).
+
+The plan includes water and food for 72 hours and 14 days, checklists for risks in your region, the fridge sheet (199 · 193 · 192), and the date of the next review (6 months). Example: [exemplo/meu-plano-exemplo.md](exemplo/meu-plano-exemplo.md).  
+Python 3.9+, nothing to install, no internet required.
+
+## The process, from start to finish
+
+| # | Step | Command | Who |
+|---|---|---|---|
+| 1 | Read the guide and the 5 steps | open https://inematds.github.io/caminho-seguro/guia/en/ | 🧠 you |
+| 2 | Generate your household plan | `python3 caminho.py` | ⚙️ script |
+| 3 | Assemble the 72-hour kit | Step 1 checklist in `meu-plano.md` | 🧠 you |
+| 4 | Protect your accounts | Step 3 (two-step verification by app, Registrato) | 🧠 you |
+| 5 | Make a plan with your family and print the fridge sheet | Step 4 | 🧠 you |
+| 6 | Measure your AI level | Certificate from the [nivel-ia](https://inematds.github.io/nivel-ia/guia/#certificado) kit | ⚙️ script / 🤖 Claude Code or Codex |
+| 7 | Reach 14 days and review every 6 months | Run `python3 caminho.py` again | 🧠 you |
+| 8 | Test the kit (for those working with the code) | `python3 -m pytest -q tests` | ⚙️ script |
+
+## Related kits
+
+- [sobreviver-ia](https://inematds.github.io/sobreviver-ia/guia/) — Offline Wikipedia and AI, account audit, 90-day plan.
+- [nivel-ia](https://inematds.github.io/nivel-ia/guia/) — A certificate of your AI level.
+
+This does not replace guidance from your city’s Civil Defense. It is not financial or medical advice.
+
+## License
+
+MIT — see [LICENSE](LICENSE). Version 1.0.0. Part of the [INEMA.CLUB](https://inema.club) ecosystem — free.
+
+## Self-learning
+
+When something goes wrong, the lesson goes at the top of [LESSONS.md](LESSONS.md).
+
+## Lessons
+
+See [LESSONS.md](LESSONS.md).

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!-- caminho-seguro guia EN (traduzido do PT). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>caminho-seguro — the world will keep stopping; your family can get through it safely</title>
+<meta name="description" content="The safe path: 5 free steps to get through the coming years of instability — a 72-hour kit, not relying only on online access, digital protection, health and family, and work with AI.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/caminho-seguro/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/caminho-seguro/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/caminho-seguro/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;height:auto;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  .techhead{background:var(--bg2);border-top:3px solid var(--amb);padding:58px 0 8px}
+  .techhead h2{font-family:Sora;margin:.3em 0 0}
+  .techzone{background:var(--bg2)}
+  .cimg{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin:0 0 14px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🧭</span> caminho-seguro</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#porque">Why now</a>
+    <a class="sec" href="#passos">The 5 steps</a>
+    <a class="sec" href="#calcular">Calculator</a>
+    <a class="sec" href="#cozinhar">Cooking</a>
+    <a class="sec" href="#comunicar">Communication</a>
+    <a class="sec" href="#biblioteca">Offline library</a>
+    <a class="sec" href="#manuais">Guides</a>
+    <a class="sec" href="#trabalho">Work</a>
+    <a class="sec" href="#tecnico">Kit (technical)</a>
+    <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <a class="btn" href="https://github.com/inematds/caminho-seguro" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Free kit · 5 steps</span>
+      <h1>The world will keep stopping. <span class="amb">The safe path</span> gets your family through to the other side.</h1>
+      <p class="lead">Could you manage three days without electricity, internet, or banking? Extreme weather, cyberattacks, and work transformed by AI are already here. Those who prepare now can get through it calmly.</p>
+      <div class="cta">
+        <a class="btn" href="#video">Understand in 5 minutes</a>
+        <a class="btn ghost" href="https://github.com/inematds/caminho-seguro" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+    <figure><img src="../assets/banner-en.jpg" alt="The safe path: the world will keep stopping, your family can get through it safely"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">In brief</span>
+  <p>The safe path is a free INEMA guide to help you and your family get through the coming years of instability: floods, tornadoes, and heat during a very strong El Niño; blackouts, attacks on systems and data leaks; and work changing with robots and artificial intelligence. There are <strong>5 simple steps</strong>: build a home kit, avoid relying only on online access, protect your accounts, take care of your health and make a family plan, and prepare your work for AI. You don’t need anything to read it. If you want, a small program can put together a plan for your household in one minute.</p>
+  <p class="mut" style="font-size:.95rem">Note: the plan program and the checklists in the repository are in Portuguese, and some details (emergency numbers 199/193/192, SMS 40199, Registrato, CPF, Pix) apply to Brazil. Outside Brazil, use your country's emergency numbers and civil protection guidance; the amounts (water, food, 72 hours) are the same.</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="The safe path: a 72-hour kit, offline readiness, digital protection, health and family, work with AI, a plan in 1 minute" loading="lazy" style="width:100%;display:block"></figure>
+</div></section>
+
+<section id="video"><div class="wrap">
+  <span class="chip">Video</span>
+  <h2>Understand in a few minutes</h2>
+  <p class="sub">Everything is going to get worse: El Niño, floods, blackouts and attacks on systems. But there is a safe path for you and your family, in 3 steps.</p>
+  <div style="aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line)"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/Sp28Yi-zKU4" title="Video: Everything is going to get worse. But here is the safe path" style="width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <p class="mut" style="margin-top:12px"><a href="https://www.youtube.com/watch?v=Sp28Yi-zKU4" target="_blank" rel="noopener">▶ Watch on YouTube</a> · <a href="https://youtube.com/shorts/JrROTl6skg8" target="_blank" rel="noopener">Vertical version (phone)</a></p>
+  <p class="mut">▶ Next 5 years and work with AI version: <a href="https://www.youtube.com/watch?v=oN9sCuGD1b4" target="_blank" rel="noopener">video</a> · <a href="https://youtube.com/shorts/YpXU0OIhnG4" target="_blank" rel="noopener">vertical</a></p>
+  <p class="mut">▶ Digital security version: <a href="https://www.youtube.com/watch?v=4iFMGw9YwhE" target="_blank" rel="noopener">video</a> · <a href="https://youtube.com/shorts/zKYDYleamvU" target="_blank" rel="noopener">vertical</a></p>
+  <!-- VERSOES -->
+</div></section>
+
+<section id="porque"><div class="wrap">
+  <span class="chip">Why now</span>
+  <h2>When one system stops, <span class="amb">everything stops</span></h2>
+  <p class="sub">In this week alone, November 2026, three warnings that the world will stop more often — and prepared families suffer less.</p>
+  <div class="grid g3">
+    <div class="card"><h3>✈️ Flights stopped in the US</h3><p>On November 13, 2026, the FAA suspended departures at all airports in the United States because of an <strong>air traffic control communications failure</strong> (not an attack). Thousands of flights were delayed or canceled. If a failure can stop the world’s wealthiest country, it can happen in your city too. <a href="https://www.metropoles.com/mundo/eua-suspende-decolagens-em-todos-aeroportos-por-motivos-de-seguranca" target="_blank" rel="noopener">source</a></p></div>
+    <div class="card"><h3>💻 Attacks in Brazil</h3><p>The Port of Santos had its systems knocked offline in an attack (since November 6). Caixa Vida e Previdência exposed data from about <strong>7.6 million</strong> customers. The National Treasury exposed <strong>30,000</strong> records and <strong>4,000 Pix keys</strong>. The danger now is a scam using your correct name and CPF. Sources: <a href="https://timesbrasil.com.br/brasil/porto-de-santos-cria-gabinete-de-crise-apos-ataque-cibernetico/" target="_blank" rel="noopener">Port</a> · <a href="https://tecnoblog.net/noticias/alerta-vazamento-na-caixa-expoe-dados-de-76-milhoes-de-clientes" target="_blank" rel="noopener">Caixa Vida</a> · <a href="https://www.gazetadopovo.com.br/republica/incidente-no-tesouro-nacional-expoe-dados-de-30-mil-cadastros-e-4-mil-chaves-pix/" target="_blank" rel="noopener">Treasury</a></p></div>
+    <div class="card"><h3>🌧️ Strong to very strong El Niño</h3><p>El Niño (a warmer Pacific Ocean that changes rainfall in Brazil) is already underway (declared in June). In its November 12, 2026 bulletin, NOAA, the US weather agency, says it keeps strengthening and that a <strong>strong-to-very strong</strong> El Niño is likely through March 2027 (<strong>more than a 79% chance</strong>; in August and September, the chance of it becoming very strong was above 90%) (<a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml" target="_blank" rel="noopener">NOAA bulletin</a>). In Brazil: more rain, storms, and flooding in the South; heat, drought, and fires in the Center-North. Greater risk doesn’t mean disaster is certain, but it’s time to prepare.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>🧭 A perspective from someone who monitors the climate</h3><p>"I’ve worked with technology for 40 years, monitor the climate, have been to Antarctica and the Arctic, and have worked with companies, education, and government. My view is that <strong>five very turbulent years</strong> lie ahead, almost like a war: climate, attacks, power struggles, factions, and the economy changing with robots and AI. And today I can say: we can get through this difficult period." — Nei Maldaner, INEMA</p></div>
+</div></section>
+
+<section id="passos"><div class="wrap">
+  <span class="chip">The path</span>
+  <h2>The <span class="amb">5 steps</span> of the safe path</h2>
+  <p class="sub">Do them in order. Each step fits into a weekend. The details and checklists are in the kit (<a href="#guia">how to use it ↓</a>).</p>
+  <div class="flow"><span>1 · Home</span><span class="arr">→</span><span>2 · Offline</span><span class="arr">→</span><span>3 · Digital</span><span class="arr">→</span><span>4 · Health and people</span><span class="arr">→</span><span>5 · Work</span></div>
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card"><img class="cimg" src="../assets/img/p1-casa.jpg" alt="" loading="lazy" width="960" height="540"><h3>🏠 1. Home: a 72-hour kit, then 14 days</h3><p>This is what Civil Defense (Brazil) recommends (and the European Union has too, since 2025): <strong>2 liters of water per person per day</strong>, nonperishable food, medicine, a flashlight and battery-powered radio, a portable charger, documents in a waterproof bag, and contacts on paper. A family of 4 needs 24 liters of water for 3 days. In the first 72 hours, no one cooks: the food is ready to eat. After that, gradually build up to 14 days’ worth, with a way to cook without power, and review every 6 months. <a href="#cozinhar">Eating and cooking without power ↓</a></p></div>
+    <div class="card"><img class="cimg" src="../assets/img/p2-online.jpg" alt="" loading="lazy" width="960" height="540"><h3>📴 2. Don’t rely only on online access</h3><p>If Pix, your banking app, or the internet stops working, how will you buy food? Keep enough cash for a few days of expenses (don’t withdraw your bank savings), contacts, prescriptions, and documents on paper, a map and information saved offline, and 14 days of food already at home. Charged cell phone, AM/FM radio, and never let the gas tank run low: <a href="#comunicar">communication and travel ↓</a> · <a href="#biblioteca">Library without internet: 3 options ↓</a></p></div>
+    <div class="card"><img class="cimg" src="../assets/img/p3-digital.jpg" alt="" loading="lazy" width="960" height="540"><h3>🔐 3. Digital protection</h3><p>Your data may already have been leaked. Be wary of anyone who knows your name and CPF and asks for personal information, a password, or Pix. Turn on <strong>two-step verification</strong> (an extra code in addition to your password): for email, use an authenticator app (such as Google Authenticator or Microsoft Authenticator) instead of SMS; for WhatsApp, use “two-step verification” with a 6-digit PIN; for your bank, use the token in its own app. Use a different password for each account. Also check <a href="https://registrato.bcb.gov.br" target="_blank" rel="noopener">Registrato</a> (a free Central Bank website) for accounts and Pix keys opened under your CPF.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/p4-saude.jpg" alt="" loading="lazy" width="960" height="540"><h3>❤️ 4. Health and people</h3><p>Keep a 14-day supply of prescription medicine and store the prescription. <strong>Make a family plan</strong>: a meeting place, who picks up the children, a relative outside town everyone can contact, and how to reach each other without internet. Trusted neighbors. And Civil Defense (Brazil) alerts on your phone: text your ZIP code to <strong>40199</strong>.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>🗺️ Different regions, different risks</h3><p>The kit includes checklists for floods and landslides, severe winds and tornadoes, heat and fires, long blackouts, digital scams, and supply shortages. Choose the ones for your city, and the plan will include only what matters to you.</p></div>
+</div></section>
+
+
+<section id="calcular"><div class="wrap">
+  <span class="chip">Calculator</span>
+  <h2>How much should your household <span class="amb">store</span>?</h2>
+  <p class="sub">Works on your phone, with nothing to install. It calculates only drinking water (2 liters per person per day, as Civil Defense (Brazil) recommends) and food.</p>
+  <div class="card">
+    <label style="display:block;margin-bottom:10px">People in the household: <input id="cPes" type="number" min="1" max="30" value="4" style="width:5em;padding:.3em;border-radius:8px;border:1px solid var(--line);background:var(--bg2);color:inherit"></label>
+    <table style="width:100%;border-collapse:collapse;font-size:.95rem">
+      <tr><th style="text-align:left;padding:6px"></th><th style="text-align:left;padding:6px">72 hours</th><th style="text-align:left;padding:6px">14 days</th></tr>
+      <tr><td style="padding:6px">Drinking water</td><td style="padding:6px" id="cA3"></td><td style="padding:6px" id="cA14"></td></tr>
+      <tr><td style="padding:6px">Food (72 h: ready to eat, no cooking · 14 days: dry goods, rice, beans, pasta)</td><td style="padding:6px" id="cC3"></td><td style="padding:6px" id="cC14"></td></tr>
+    </table>
+    <p style="margin-top:10px">The 14-day food supply in kilograms is dry (it needs cooking). Electric or induction stove: replace much of it with ready-to-eat food (<a href="#cozinhar">cooking without power ↓</a>). Also: prescription medicine, a flashlight and battery-powered radio, documents in a bag, and contacts on paper (199 · 193 · 192). Review every 6 months.</p>
+  </div>
+</div></section>
+<script>
+(function(){var i=document.getElementById('cPes');function f(n){return n.toLocaleString(document.documentElement.lang,{maximumFractionDigits:1})}
+function up(){var p=Math.max(1,Math.min(30,parseInt(i.value)||1));[[3,'3'],[14,'14']].forEach(function(d){var a=p*d[0]*2,k=p*d[0]*2000/3500;
+document.getElementById('cA'+d[1]).textContent=f(a)+' L ('+Math.ceil(a/5)+' × 5 L)';document.getElementById('cC'+d[1]).textContent=d[0]===3?'≈ '+f(p*d[0]*2000)+' kcal':'≈ '+f(Math.round(k*10)/10)+' kg';});}
+i.addEventListener('input',up);up();})();
+</script>
+
+<section id="cozinhar"><div class="wrap">
+  <span class="chip">Step 1b</span>
+  <h2>Eating and cooking <span class="amb">without power</span></h2>
+  <p class="sub">For the first 72 hours, you don’t cook: the family eats what’s already ready. This saves gas and water and avoids the biggest risk of improvised indoor fires: fire and carbon monoxide (an odorless, colorless gas that can kill). If it lasts more than 3 days, the plan depends on where you live and what kind of stove you have.</p>
+  <div class="grid g2">
+    <div class="card"><img class="cimg" src="../assets/img/c1-72h.jpg" alt="" loading="lazy" width="960" height="540"><h3>🥫 72 hours: no cooking</h3><p><strong>Eat the food that spoils first:</strong> a closed refrigerator keeps food cold for about 4 hours; a full freezer, about 48 hours (half full, 24). After that, use the pantry: ready-to-eat canned food (tuna, sardines, hot dogs, ready-to-eat beans and chickpeas, corn), sliced bread, crackers, peanut butter, nuts, fruit and dried fruit, shelf-stable or powdered milk, oatmeal made with cold milk, cereal bars. A manual can opener and disposable plates save water for washing.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/c2-truques.jpg" alt="" loading="lazy" width="960" height="540"><h3>🔥 More than 3 days: useful tricks</h3><p>Rice, pasta, and beans need heat and <strong>extra water</strong> to cook (the 2 liters per day are for drinking only). Choose foods that cook quickly (thin pasta, parboiled rice, couscous, oatmeal) and canned beans. Keep the pot covered. <strong>Stored heat:</strong> bring food to a full boil (rice and pasta for about 5 minutes; soaked beans for at least 10 minutes at a rolling boil, because raw beans can make you sick), turn off the heat, cover the pot, and wrap it in a blanket; it will finish cooking while using much less gas. A thermos filled with boiled water in the morning will last all day.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/c3-gas.jpg" alt="" loading="lazy" width="960" height="540"><h3>🏠 Home with a gas stove</h3><p>Gas doesn’t depend on electricity, but the <strong>electric igniter</strong> won’t work: keep matches or a lighter in your kit and test them today with the stove unplugged. Some stove ovens may not work without power; rely on the burners. A 13 kg gas cylinder lasts 3 weeks to 2 months for a family of 4: note when you replaced it and replace it before it runs out. Piped gas usually keeps flowing without power.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/c4-lenha.jpg" alt="" loading="lazy" width="960" height="540"><h3>🌳 Rural home or home with a yard: firewood</h3><p><strong>A wood-burning stove with a chimney</strong> is the best plan for weeks. Without one, use a stove made from three or four bricks <strong>outdoors</strong>, away from the house, dry brush, and children. Store dry, cut, covered firewood away from the wall, with kindling to start the fire: green wood produces smoke and little heat. During the dry season, follow the burn ban and keep a bucket of water nearby. On a sunny day, a solar cooker can cook without smoke.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/c5-apto.jpg" alt="" loading="lazy" width="960" height="540"><h3>🏢 Apartment</h3><p><strong>Never use firewood, charcoal, a grill, or a campfire</strong> in the apartment, on the deck, or on the balcony. Gas cylinders are prohibited in many buildings (in São Paulo and Rio, in buildings with piped gas): check your building’s rules and don’t keep a spare cylinder at home. Piped gas: do the match test (during a flood, the building may shut off the gas). Electric or induction stoves won’t cook without power; plan to replace much of your 14-day supply with ready-to-eat food and keep a portable butane stove, used only on an open balcony if the building allows it (each canister provides 1 to 2 hours of flame; a closed, glass-enclosed balcony doesn’t count). It’s the only exception because the flame is small, turns on and off instantly, and leaves no embers. If the building doesn’t allow it, the plan is to stick to ready-to-eat food and get hot water from a neighbor who has gas. Make an arrangement with your neighbors: those with gas can heat water for those without it.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/c6-nunca.jpg" alt="" loading="lazy" width="960" height="540"><h3>⚠️ Never, in any home</h3><p>Never use a grill, charcoal stove, brazier, or generator <strong>indoors, in an enclosed garage, or near a window</strong>; never leave a stove or oven on for heat. If several people have a headache, nausea, or dizziness at the same time, get outdoors and call <strong>193</strong>. If you smell gas: open the windows, shut off the valve, don’t touch any switches, leave, and call 193. Butane stoves also produce carbon monoxide: use them only outdoors or on an open balcony, never in an enclosed room. An inexpensive battery-powered carbon monoxide detector can protect your family.</p></div>
+  </div>
+  <p class="sub" style="margin-top:16px">The full checklist, organized by home and stove type: <a href="https://github.com/inematds/caminho-seguro/blob/main/passos/1b-cozinhar-sem-luz.md" target="_blank" rel="noopener">eating and cooking without power</a> (in Portuguese). Refrigerator and freezer times: U.S. food safety agency (USDA). This does not replace guidance from the Fire Department and Civil Defense.</p>
+</div></section>
+
+<section id="comunicar"><div class="wrap">
+  <span class="chip">Steps 2b and 2c</span>
+  <h2>When your phone stops working: <span class="amb">how to communicate and travel</span></h2>
+  <p class="sub">If the power goes out, your phone may go silent within a few hours. Without power, cell towers can run on battery for a few hours before they may stop working; internet access goes with them, as it did during the floods in Rio Grande do Sul in 2024. And without power, gas station pumps don't work either. The plan: keep your phone charged, have an AM/FM radio to hear alerts, a radio to communicate, and never let your tank run low.</p>
+  <div class="grid g2">
+    <div class="card"><img class="cimg" src="../assets/img/m1-celular.jpg" alt="" loading="lazy" width="960" height="540"><h3>🔋 Keep your phone charged: at least one full charge</h3><p>Keep a portable battery fully charged (10,000 mAh provides about 1 to 2 charges; recharge it every month). Use a USB car charger with the engine running and the car outdoors, never in a closed garage. For longer outages, use a small solar panel with a USB output. From the first hour: use battery saver, turn off mobile data, and keep your phone on only at times agreed on with your family. <strong>Text messages</strong> can get through when the internet can't, and 190, 192, 193, and 199 work without phone credit. If you don't have a device: agree on a meeting place and time, and choose a relative outside the city whom everyone will contact.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/m2-radio.jpg" alt="" loading="lazy" width="960" height="540"><h3>📻 Listen: battery-powered AM/FM radio</h3><p>Without internet or TV, radio is how alerts reach you: shelters, flooded streets, and where to find water. Use a battery-powered or hand-crank radio, keep spare batteries outside the radio, and write down local stations' frequencies on paper. <strong>AM reaches farther</strong>, especially at night. Your car radio also works for a short time with the engine off.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/m3-walkie.jpg" alt="" loading="lazy" width="960" height="540"><h3>📟 Communicate: no license required</h3><p><strong>License-free walkie-talkies</strong>, approved by Anatel: no license is required; they reach from hundreds of meters to a few kilometers (the box may promise more). They're useful for family around the neighborhood, at a country home, or in an apartment building: agree on a channel and schedule. <strong>Citizens Band (PX)</strong>, the truckers' radio: it reaches farther and only requires free registration with Anatel and an approved radio (an older PX radio works if it's approved).</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/m4-radioamador.jpg" alt="" loading="lazy" width="960" height="540"><h3>📡 Amateur radio: the full setup</h3><p>Communicate with another city, state, or country without relying on any network. During the 2024 floods in RS, volunteer amateur radio operators relayed thousands of emergency calls. <strong>A license is required:</strong> pass an Anatel exam for the COER (an online exam is available; the entry-level class is C, with a 51% score required in each section), get a free certificate, then get a station license, which has a government fee. The easiest route is through your state's <strong>LABRE</strong> or an amateur radio club. Never transmit on police, fire department, SAMU, or aviation frequencies: it's a crime and interferes with rescue efforts.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/m5-tanque.jpg" alt="" loading="lazy" width="960" height="540"><h3>⛽ Never let your tank run low</h3><p>The habit that solves almost everything: <strong>when you're halfway, fill up</strong>. It doesn't cost extra; you just fill up sooner. During the 2018 truckers' strike, fuel ran short across much of the country within a few days. Electric car: keep the battery above half. Store fuel only at home or at a country home, in small amounts, in an Inmetro-certified container, outside the house, and rotate it every few months; never store it in an apartment.</p></div>
+    <div class="card"><img class="cimg" src="../assets/img/m6-rotas.jpg" alt="" loading="lazy" width="960" height="540"><h3>🗺️ Routes, car kit, and getting around without a car</h3><p>Plan two routes to your meeting place and to a relative outside the city, including one without bridges or flood-prone streets, and know how to get there on foot. Never cross floodwater: 30 cm of flowing water can sweep a car away. In the car: water, light food, a flashlight, a charger, a paper or offline map, a blanket, and first aid supplies. Without a car: keep your bicycle tires inflated and arrange a ride with a neighbor. In an apartment building, the elevator stops during a power outage: agree on who will help older residents.</p></div>
+  </div>
+  <p class="sub" style="margin-top:16px">Full checklists: <a href="https://github.com/inematds/caminho-seguro/blob/main/passos/2b-comunicar-sem-rede.md" target="_blank" rel="noopener">communicating when the system goes down</a> (in Portuguese) and <a href="https://github.com/inematds/caminho-seguro/blob/main/passos/2c-deslocamento.md" target="_blank" rel="noopener">travel</a> (in Portuguese). Radio rules: <a href="https://www.gov.br/anatel/pt-br/regulado/outorga/radioamador-e-radio-cidadao/habilitacao-do-radioamador" target="_blank" rel="noopener">Anatel</a> (in Portuguese), checked on 11/14/2026.</p>
+</div></section>
+
+<section id="biblioteca"><div class="wrap">
+  <span class="chip">No internet</span>
+  <h2>The family library <span class="amb">without internet</span>: choose 1 of 3</h2>
+  <p class="sub">If the internet goes down for days, the family can still access Wikipedia, first aid, maps, and even an AI. Choose only the option for the device you have. Download everything today, over Wi-Fi.</p>
+  <div style="aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px"><iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/wAGPYvHrimI" title="Video: the offline library, pick 1 of 3 (in Portuguese)" style="width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  <p class="mut" style="margin-bottom:18px"><a href="https://www.youtube.com/watch?v=wAGPYvHrimI" target="_blank" rel="noopener">▶ Watch on YouTube</a> · <a href="https://youtube.com/shorts/pB1SbH-8MOA" target="_blank" rel="noopener">Vertical version (phone)</a> · video in Portuguese</p>
+  <div class="grid g3">
+    <div class="card"><h3>📱 1. Just a phone</h3><p><strong>Kiwix</strong> app (Android and iPhone) with the "mini" Portuguese Wikipedia (<strong>1.6 GB</strong>) and basic medicine in English (166 MB). Maps of your state in <strong>Organic Maps</strong>. A small AI that, once downloaded, answers without internet. <a href="https://github.com/inematds/caminho-seguro/blob/main/offline/1-so-celular.md" target="_blank" rel="noopener">Step-by-step guide</a></p></div>
+    <div class="card"><h3>💻 2. Basic computer</h3><p><strong>Kiwix Desktop</strong> (Windows, Linux, and Mac) with the complete Portuguese Wikipedia, without photos (<strong>6.6 GB</strong>). If you want, a small AI that runs on the processor without a graphics card (slowly). <a href="https://github.com/inematds/caminho-seguro/blob/main/offline/2-pc-simples.md" target="_blank" rel="noopener">Step-by-step guide</a></p></div>
+    <div class="card"><h3>🖥️ 3. Powerful computer: Project NOMAD</h3><p>Open project by Crosstalk Solutions: in a browser dashboard, Wikipedia, Khan Academy courses for each person in the household, maps, and an AI that reads your documents. Requires Linux and, for AI, 32 GB of memory and an NVIDIA graphics card. <a href="https://inematds.github.io/project-nomad/guia/" target="_blank" rel="noopener">Guide</a> · <a href="https://www.youtube.com/watch?v=0ime1xfLE9M" target="_blank" rel="noopener">video</a></p></div>
+  </div>
+  <p class="sub" style="margin-top:16px">AI can be wrong: check medication doses and health decisions with a professional. Sizes checked on November 13, 2026 (they change with each release).</p>
+</div></section>
+
+<section id="manuais"><div class="wrap">
+  <span class="chip">Ready-to-use guides</span>
+  <h2>The best <span class="amb">free official guides</span></h2>
+  <p class="sub">We researched the guides already available online. We included only free guides from governments or reputable organizations, with links checked on 11/14/2026. There is no single guide in Portuguese that covers everything; this guide brings together the essentials for Brazil. Download the PDFs today and save them in your offline library.</p>
+  <div class="grid g3">
+    <div class="card"><h3>⏱️ 72 hours</h3><p><strong>Civil Defense</strong> (Brazil): official guidance on the 72-hour kit, summarized in Step 1 of this guide; to write your family plan in Portuguese, see the <a href="https://defesacivil.uff.br/wp-content/uploads/sites/325/2020/10/2014-Plano-de-Contingencia-da-Familia.pdf" target="_blank" rel="noopener">Plano de Contingência da Família</a> (in Portuguese) (UFF Civil Defense, PDF). <a href="https://72tuntia.fi/wp-content/uploads/2025/01/spek_72_hours_home_preparedness_2025_01_21_v01.pdf" target="_blank" rel="noopener">72 hours</a> (Finland, 2025, in English): the best-made 72-hour guide, concise and organized by topic. <a href="https://www.getprepared.gc.ca/cnt/rsrcs/pblctns/yprprdnssgd/" target="_blank" rel="noopener">Your Emergency Preparedness Guide</a> (Canada, in English): a family plan with fill-in worksheets.</p></div>
+    <div class="card"><h3>📦 10 days to a month</h3><p><a href="https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html" target="_blank" rel="noopener">BBK</a> (Germany, in German; use your browser’s translator): the official 10-day goal, with a food list by weight. <a href="https://www.mcf.se/en/advice-for-individuals/the-brochure-in-case-of-crisis-or-war/download-and-order-the-brochure-in-case-of-crisis-or-war/" target="_blank" rel="noopener">In case of crisis or war</a> (Sweden, 2024, multiple languages): food, water, heat, cyberattacks, and neighbors. <a href="https://www.ready.gov/sites/default/files/2021-03/are-you-ready-guide.pdf" target="_blank" rel="noopener">Are You Ready?</a> (U.S., in English): the most comprehensive guide, with one chapter per disaster; the kit and food guidance for power outages are also available in Spanish at <a href="https://www.ready.gov/es/kit" target="_blank" rel="noopener">Ready.gov</a>. If you don’t read English or German, start with Ready.gov in Spanish and use your browser’s translator for BBK.</p></div>
+    <div class="card"><h3>🩺 More than a month</h3><p>No government publishes a guide for more than a month: official guides cover up to 10 to 14 days. For longer periods, the same approach applies at a larger scale: multiply the BBK list, rotate your supplies, have a way to cook that won’t run out (firewood, gas), and keep water for boiling. What changes is staying healthy without a doctor: <a href="https://languages.hesperian.org/pages/en/index.html" target="_blank" rel="noopener">Hesperian health books in English</a>, from the organization behind <em>Where There Is No Doctor</em>: health and first aid for when a doctor can’t get there.</p></div>
+  </div>
+  <p class="sub" style="margin-top:16px">The list with the reasons for each choice: <a href="https://github.com/inematds/caminho-seguro/blob/main/MANUAIS.md" target="_blank" rel="noopener">MANUAIS.md</a> (in Portuguese).</p>
+</div></section>
+
+<section id="trabalho"><div class="wrap">
+  <span class="chip">Step 5</span>
+  <h2>Get through to the other side <span class="amb">with a job</span></h2>
+  <p class="sub">Robots and artificial intelligence will take over a large part of the work. Companies that don’t prepare will have to change or fail. Those who prepare will change roles; those who wait will be laid off.</p>
+  <div class="grid g3">
+    <div class="card"><h3>📏 Find out your AI level</h3><p>The kit’s free <a href="https://inematds.github.io/nivel-ia/guia/#certificado" target="_blank" rel="noopener">nivel-ia</a> certificate shows how much of your work AI already does, on a 5-step scale: from AL1 (you do it alone) to AL5 (AI does it alone, with rules and alerts). If you only use ChatGPT in a browser, use the paper form. It’s a measurement, not a diploma.</p></div>
+    <div class="card"><h3>📈 Evidence from someone who measured</h3><p>Nei measured his own work over 90 days: on average over the period, <strong>48.9%</strong> was already handled by AI; week by week, it rose from 11% (late August) to 61% (the last week). This is a measurement of his machine, not a national statistic — but it shows how quickly things are changing.</p></div>
+    <div class="card"><h3>🎓 Learn for free</h3><p>Write down your field and three tasks you do every week. Choose one for AI to do with you this month. Open courses, projects, and videos at <a href="https://inema.club" target="_blank" rel="noopener">inema.club</a>, directly on the internet.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>💬 What about you?</h3><p>What field do you work in, and what are you already doing to prepare? Share with the <a href="https://inema.club" target="_blank" rel="noopener">inema.club</a> community.</p></div>
+</div></section>
+
+<div id="tecnico" class="techhead"><div class="wrap">
+  <span class="chip">Technical section</span>
+  <h2>The kit: <span class="amb">for anyone who wants a ready-made household plan</span></h2>
+  <p class="sub">The technical section starts here: download the kit and run a simple program that puts together your plan. You <strong>don’t need</strong> this section to understand and follow what’s above.</p>
+</div></div>
+
+<div class="techzone">
+<section id="oque"><div class="wrap">
+  <span class="chip">What it is</span>
+  <h2>A plan for your home <span class="amb">in one minute</span></h2>
+  <p class="sub">The kit is a folder with the 5 steps in checklist form and a Python program that does the calculations for you. It works offline: nothing leaves your computer.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🧮 The right calculations</h3><p>Water (2 L per person per day) and food (2,000 kcal per person per day) for 72 hours and 14 days, in 5 L jugs; ready-to-eat food for the first 72 hours and kilograms of dry food for 14 days. And your household’s way to cook without power (house, rural property, or apartment; gas cylinder, piped gas, electric, or wood).</p></div>
+    <div class="card"><h3>🗺️ Only your risks</h3><p>Choose floods, severe winds, heat, blackouts, digital risks, or conflict; the plan includes the checklist for each. Children, older adults, pets, and medicine are included if you say they apply.</p></div>
+    <div class="card"><h3>📌 Fridge sheet</h3><p>Civil Defense (Brazil) 199, Fire Department 193, SAMU 192, meeting place and who picks up the children, plus the date of the next review (6 months).</p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Requirements</span>
+  <h2>What you need</h2>
+  <p class="sub">Only Python 3.9 or newer (already included on Linux and Mac; on Windows, install it from python.org and use <code>py</code> instead of <code>python3</code> in the commands). No extra libraries.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Check Python</h3><p>Open a terminal and run:</p><pre><span class="k">python3 --version</span>  <span class="c"># Python 3.9 ou mais</span></pre></div>
+    <div class="card"><h3>No terminal?</h3><p>Use the <a href="#calcular">calculator on this page</a> and follow the checklists in the <a href="https://github.com/inematds/caminho-seguro/tree/main/passos" target="_blank" rel="noopener">passos/ folder on GitHub</a> by hand.</p></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">User guide</span>
+  <h2>Step by step</h2>
+  <p class="sub">From scratch to a plan posted on the fridge.</p>
+  <div class="step"><div class="b">1</div><div>
+    <h3>Download the kit</h3>
+    <p>Using git, or the “Code → Download ZIP” button on GitHub.</p>
+<pre><span class="k">git clone https://github.com/inematds/caminho-seguro</span>
+<span class="k">cd caminho-seguro</span></pre>
+  </div></div>
+  <div class="step"><div class="b">2</div><div>
+    <h3>Answer the questions</h3>
+    <p>How many people, children, older adults, pets, whether anyone takes regular medication, and the risks in your region, where you live and what kind of stove you have. Press Enter to accept the default.</p>
+<pre><span class="k">python3 caminho.py</span>  <span class="c"># grava meu-plano.md</span></pre>
+  </div></div>
+  <div class="step"><div class="b">3</div><div>
+    <h3>Or enter everything at once</h3>
+    <p>Possible risks: <code>enchente</code>, <code>vendaval</code>, <code>calor</code>, <code>apagao</code>, <code>digital</code>, <code>conflito</code>. Housing: <code>casa</code>, <code>sitio</code>, <code>apartamento</code>. Stove: <code>botijao</code>, <code>encanado</code>, <code>eletrico</code> (or <code>inducao</code>), <code>lenha</code>.</p>
+<pre><span class="k">python3 caminho.py --nome "Família Silva" --pessoas 4 --criancas 1 --remedios --riscos enchente,apagao,digital --moradia apartamento --fogao inducao --saida meu-plano.md</span>
+<span class="c"># ok: meu-plano.md — 72 h: 24 L de água; revise em 6 meses</span>
+<span class="k">python3 caminho.py --listar-riscos</span></pre>
+  </div></div>
+  <div class="step"><div class="b">4</div><div>
+    <h3>Print and check off</h3>
+    <p>Open <code>meu-plano.md</code> (in any text editor), print it, put the fridge sheet on the fridge, and check off the items as you go. Details for each step are in <code>passos/1-casa-72h.md</code> to <code>passos/5-trabalho-ia.md</code>; cooking without power in <code>passos/1b-cozinhar-sem-luz.md</code> and the ready-made guides in <code>MANUAIS.md</code>.</p>
+  </div></div>
+  <div class="step"><div class="b">5</div><div>
+    <h3>Review every 6 months</h3>
+    <p>The plan includes the date. Run it again if your family changes. For anyone working with the code, the tests are:</p>
+<pre><span class="k">python3 -m venv .venv &amp;&amp; . .venv/bin/activate &amp;&amp; pip install pytest</span>  <span class="c"># só para os testes</span>
+<span class="k">python3 -m pytest -q tests</span>  <span class="c"># 26 passed</span></pre>
+  </div></div>
+</div></section>
+
+<section id="exemplos"><div class="wrap">
+  <span class="chip">Example</span>
+  <h2>A family of 4</h2>
+  <p class="sub">Generated with <code>--pessoas 4 --criancas 1 --idosos 1 --pets 1 --remedios --riscos enchente,apagao,digital --moradia casa --fogao botijao</code> (file <a href="https://github.com/inematds/caminho-seguro/blob/main/exemplo/meu-plano-exemplo.md" target="_blank" rel="noopener">exemplo/meu-plano-exemplo.md</a>).</p>
+  <div class="card"><table style="width:100%;border-collapse:collapse;font-size:.92rem">
+    <tr><th style="text-align:left;padding:6px"></th><th style="text-align:left;padding:6px">72 hours (minimum)</th><th style="text-align:left;padding:6px">14 days (target)</th></tr>
+    <tr><td style="padding:6px">Drinking water</td><td style="padding:6px">24 L (5 jugs of 5 L)</td><td style="padding:6px">112 L (23 jugs of 5 L)</td></tr>
+    <tr><td style="padding:6px">Food</td><td style="padding:6px">~24,000 kcal of ready-to-eat food, no cooking</td><td style="padding:6px">~112,000 kcal (≈ 32 kg of dry food that needs to be cooked over a fire)</td></tr>
+  </table><p style="margin-top:10px">Also: the child’s diapers and milk, the older adult’s glasses and medicine, pet food, prescriptions in the kit, and the flood, blackout, and digital scam checklists.</p></div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Related kits</span>
+  <h2>Go further</h2>
+  <p class="sub">The safe path brings together what other free INEMA kits already do.</p>
+  <div class="phase"><div class="tag">Offline</div><div class="d"><strong><a href="https://inematds.github.io/sobreviver-ia/guia/" target="_blank" rel="noopener">sobreviver-ia</a></strong><span>Wikipedia and AI on your computer, offline; account audit; a 90-day plan.</span></div></div>
+  <div class="phase"><div class="tag">NOMAD</div><div class="d"><strong><a href="https://inematds.github.io/project-nomad/guia/" target="_blank" rel="noopener">project-nomad</a></strong><span>Project NOMAD: an offline knowledge server for a powerful computer (Wikipedia, courses, maps and AI).</span></div></div>
+  <div class="phase"><div class="tag">Work</div><div class="d"><strong><a href="https://inematds.github.io/nivel-ia/guia/" target="_blank" rel="noopener">nivel-ia</a></strong><span>Your AI level certificate (AL1 to AL5), with projections for 1, 3, and 6 months.</span></div></div>
+  <div class="phase"><div class="tag">Climate</div><div class="d"><strong><a href="https://www.youtube.com/@eventosextremos-inema" target="_blank" rel="noopener">INEMA extreme weather channel</a></strong><span>How to protect yourself from tornadoes, floods, and heat, on INEMA’s extreme weather channel.</span></div></div>
+  <p class="sub" style="margin-top:18px">This does not replace guidance from your local civil protection authority. This is not financial or medical advice.</p>
+</div></section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Python 3</div><div class="pill">offline</div><div class="pill">free license (MIT)</div>
+    <p style="margin-top:18px">caminho-seguro · free INEMA kit · November 13, 2026 ·
+      <a href="https://github.com/inematds/caminho-seguro">inematds/caminho-seguro</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='caminho-seguro-theme'; // troque caminho-seguro pelo nome do projeto
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }}catch(e){}
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      try{localStorage.setItem(KEY, light?'light':'dark');}catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
