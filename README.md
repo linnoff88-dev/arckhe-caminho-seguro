@@ -1,4 +1,4 @@
-﻿# caminho-seguro
+# caminho-seguro
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -8,17 +8,17 @@
 
 **ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
 
-[![caminho-seguro](guia/assets/banner.jpg)](https://inematds.github.io/caminho-seguro/guia/)
+[![caminho-seguro](guia/assets/banner.jpg)](https://linnoff88-dev.github.io/
 
 ## O que Ã©
 
-O caminho seguro Ã© um guia grÃ¡tis do INEMA para vocÃª e a sua famÃ­lia atravessarem os prÃ³ximos anos de instabilidade: enchentes, tornados e calor com o El NiÃ±o muito forte, apagÃµes, ataques a sistemas e vazamento de dados, e o trabalho mudando com robÃ´s e inteligÃªncia artificial. SÃ£o 5 passos simples: montar o kit de casa, nÃ£o depender sÃ³ do online, proteger as suas contas, cuidar da saÃºde e combinar com a famÃ­lia, e preparar o seu trabalho para a IA. Para ler, nÃ£o precisa de nada. Se quiser, um pequeno programa monta o plano da sua casa em um minuto.
+O caminho seguro Ã© um guia grÃ¡tis do ARCKHÉ para vocÃª e a sua famÃ­lia atravessarem os prÃ³ximos anos de instabilidade: enchentes, tornados e calor com o El NiÃ±o muito forte, apagÃµes, ataques a sistemas e vazamento de dados, e o trabalho mudando com robÃ´s e inteligÃªncia artificial. SÃ£o 5 passos simples: montar o kit de casa, nÃ£o depender sÃ³ do online, proteger as suas contas, cuidar da saÃºde e combinar com a famÃ­lia, e preparar o seu trabalho para a IA. Para ler, nÃ£o precisa de nada. Se quiser, um pequeno programa monta o plano da sua casa em um minuto.
 
 **O mundo vai parar com frequÃªncia, e quem se preparar vai passar por isso com a famÃ­lia segura.**
-O caminho seguro Ã© um kit grÃ¡tis do INEMA com 5 passos para atravessar os prÃ³ximos anos de instabilidade: clima extremo
+O caminho seguro Ã© um kit grÃ¡tis do ARCKHÉ com 5 passos para atravessar os prÃ³ximos anos de instabilidade: clima extremo
 (El NiÃ±o muito forte, enchentes, tornados, calor), ataques digitais, conflitos, e o trabalho mudando com robÃ´s e IA.
 
-ðŸ“– Guia: **https://inematds.github.io/caminho-seguro/guia/**
+ðŸ“– Guia: **https://linnoff88-dev.github.io/
 
 ðŸŽ¬ VÃ­deo (lives10): https://www.youtube.com/watch?v=Sp28Yi-zKU4 Â· Short: https://youtube.com/shorts/JrROTl6skg8
 
@@ -37,14 +37,14 @@ O caminho seguro Ã© um kit grÃ¡tis do INEMA com 5 passos para atravessar os 
 | 2c. Deslocamento | Tanque nunca abaixo da metade, reserva com seguranÃ§a, kit do carro, duas rotas, sem carro | [passos/2c-deslocamento.md](passos/2c-deslocamento.md) |
 | 3. Digital | O golpe depois do vazamento, verificaÃ§Ã£o em duas etapas por aplicativo, Registrato | [passos/3-digital.md](passos/3-digital.md) |
 | 4. SaÃºde e pessoas | RemÃ©dios com folga, combinado da famÃ­lia, vizinhos, alerta 40199 | [passos/4-saude-e-pessoas.md](passos/4-saude-e-pessoas.md) |
-| 5. Trabalho | Certificado do seu nÃ­vel de IA, a prÃ³xima tarefa para a IA, inema.club grÃ¡tis | [passos/5-trabalho-ia.md](passos/5-trabalho-ia.md) |
+| 5. Trabalho | Certificado do seu nÃ­vel de IA, a prÃ³xima tarefa para a IA, ARCKHÉ AI grÃ¡tis | [passos/5-trabalho-ia.md](passos/5-trabalho-ia.md) |
 
 Os melhores manuais oficiais e grÃ¡tis jÃ¡ prontos (72 horas, 10 dias a um mÃªs, sem mÃ©dico): [MANUAIS.md](MANUAIS.md).
 
 ## O seu plano em 1 minuto
 
 ```bash
-git clone https://github.com/inematds/caminho-seguro && cd caminho-seguro
+git clone https://github.com/linnoff88-dev/caminho-seguro && cd caminho-seguro
 python3 caminho.py            # responde 7 perguntas e grava meu-plano.md
 ```
 
@@ -59,27 +59,27 @@ Python 3.9+, sem instalar nada, sem internet.
 
 | # | Passo | Comando | Quem |
 |---|---|---|---|
-| 1 | Ler o guia e os 5 passos | abrir https://inematds.github.io/caminho-seguro/guia/ | ðŸ§  vocÃª |
+| 1 | Ler o guia e os 5 passos | abrir https://linnoff88-dev.github.io/ | ðŸ§  vocÃª |
 | 2 | Gerar o plano da sua casa | `python3 caminho.py` | âš™ï¸ script |
 | 3 | Montar o kit de 72 horas | checklist do passo 1 no `meu-plano.md` | ðŸ§  vocÃª |
 | 4 | Proteger as contas | passo 3 (duas etapas por app, Registrato) | ðŸ§  vocÃª |
 | 5 | Combinar com a famÃ­lia e imprimir a folha da geladeira | passo 4 | ðŸ§  vocÃª |
-| 6 | Medir o seu nÃ­vel de IA | certificado do kit [nivel-ia](https://inematds.github.io/nivel-ia/guia/#certificado) | âš™ï¸ script / ðŸ¤– Claude Code ou Codex |
+| 6 | Medir o seu nÃ­vel de IA | certificado do kit [nivel-ia](https://linnoff88-dev.github.io/ | âš™ï¸ script / ðŸ¤– Claude Code ou Codex |
 | 7 | Chegar a 14 dias e revisar a cada 6 meses | `python3 caminho.py` de novo | ðŸ§  vocÃª |
 | 8 | Testar o kit (para quem mexe no cÃ³digo) | `python3 -m pytest -q tests` | âš™ï¸ script |
 
 ## Biblioteca sem internet (escolha 1 de 3)
 
-SÃ³ celular Â· computador simples Â· computador forte ([Project NOMAD](https://inematds.github.io/project-nomad/guia/)). Uma opÃ§Ã£o por aparelho, cada uma num arquivo: [offline/README.md](offline/README.md).
+SÃ³ celular Â· computador simples Â· computador forte ([Project NOMAD](https://linnoff88-dev.github.io/ Uma opÃ§Ã£o por aparelho, cada uma num arquivo: [offline/README.md](offline/README.md).
 
 ## Kits irmÃ£os
-- [sobreviver-ia](https://inematds.github.io/sobreviver-ia/guia/) â€” Wikipedia e IA offline, auditoria das contas, plano de 90 dias.
-- [nivel-ia](https://inematds.github.io/nivel-ia/guia/) â€” o certificado do seu nÃ­vel de IA.
+- [sobreviver-ia](https://linnoff88-dev.github.io/ â€” Wikipedia e IA offline, auditoria das contas, plano de 90 dias.
+- [nivel-ia](https://linnoff88-dev.github.io/ â€” o certificado do seu nÃ­vel de IA.
 
 NÃ£o substitui a orientaÃ§Ã£o da Defesa Civil da sua cidade. NÃ£o Ã© conselho financeiro nem mÃ©dico.
 
 ## LicenÃ§a
-MIT â€” veja [LICENSE](LICENSE). VersÃ£o 1.0.0. Parte do ecossistema [INEMA.CLUB](https://inema.club) â€” grÃ¡tis.
+MIT â€” veja [LICENSE](LICENSE). VersÃ£o 1.0.0. Parte do ecossistema [ARCKHÉ AI](https://ARCKHÉ AI) â€” grÃ¡tis.
 
 ## Self-learning
 Quando algo der errado, a liÃ§Ã£o vai no topo do [LESSONS.md](LESSONS.md).

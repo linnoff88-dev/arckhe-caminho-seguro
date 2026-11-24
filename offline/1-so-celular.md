@@ -1,15 +1,15 @@
-# Opção 1 — Só o celular
+﻿# OpÃ§Ã£o 1 â€” SÃ³ o celular
 
-Para quem não tem computador. Tudo grátis; você baixa **com internet e Wi-Fi**, e depois funciona sem rede.
+Para quem nÃ£o tem computador. Tudo grÃ¡tis; vocÃª baixa **com internet e Wi-Fi**, e depois funciona sem rede.
 
-1. **Biblioteca:** instale o app **Kiwix** (Android: Play Store ou F-Droid · iPhone: App Store). Dentro dele, baixe:
-   - Wikipedia em português "mini" (só o começo de cada artigo) — **1,6 GB**;
-   - se tiver espaço, a "nopic" (texto completo, sem fotos) — **6,6 GB**;
-   - medicina (em inglês, "medicine mini") — **166 MB**.
+1. **Biblioteca:** instale o app **Kiwix** (Android: Play Store ou F-Droid Â· iPhone: App Store). Dentro dele, baixe:
+   - Wikipedia em portuguÃªs "mini" (sÃ³ o comeÃ§o de cada artigo) â€” **1,6 GB**;
+   - se tiver espaÃ§o, a "nopic" (texto completo, sem fotos) â€” **6,6 GB**;
+   - medicina (em inglÃªs, "medicine mini") â€” **166 MB**.
 2. **Mapas:** instale o **Organic Maps** (Android e iPhone) e baixe o mapa do seu estado. Funciona com GPS, sem internet.
-3. **IA pequena (opcional):** abra no navegador a página https://inematds.github.io/ia-no-bolso/celular/ com Wi-Fi,
+3. **IA pequena (opcional):** abra no navegador a pÃ¡gina https://linnoff88-dev.github.io/ com Wi-Fi,
    deixe baixar o modelo uma vez; depois ela responde sem internet. Testada no computador simulando um celular,
-   ainda não num aparelho real. A IA erra: confira dose de remédio e decisão de saúde com um profissional.
-4. **Bateria:** sem luz, o celular é a sua biblioteca — mantenha o carregador portátil carregado (passo 1 do kit).
+   ainda nÃ£o num aparelho real. A IA erra: confira dose de remÃ©dio e decisÃ£o de saÃºde com um profissional.
+4. **Bateria:** sem luz, o celular Ã© a sua biblioteca â€” mantenha o carregador portÃ¡til carregado (passo 1 do kit).
 
-Dica: o cartão de memória (Android) guarda a Wikipedia sem ocupar a memória do celular.
+Dica: o cartÃ£o de memÃ³ria (Android) guarda a Wikipedia sem ocupar a memÃ³ria do celular.
