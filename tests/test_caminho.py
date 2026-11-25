@@ -38,7 +38,7 @@ def test_parse_riscos_limpa_e_valida():
 
 def test_plano_tem_72h_14d_e_revisao_em_6_meses():
     txt = caminho.montar_plano("Silva", 2, hoje=dt.date(2026, 11, 13))
-    assert "# Plano do caminho seguro â€” Silva" in txt
+    assert "# Plano do caminho seguro ê¢â¬â Silva" in txt
     assert "| 12 L" in txt and "| 56 L" in txt
     assert "Revisar em 14/05/2027" in txt
     for t, _ in caminho.PASSOS:
@@ -48,9 +48,9 @@ def test_plano_tem_72h_14d_e_revisao_em_6_meses():
 
 def test_plano_itens_condicionais():
     sem = caminho.montar_plano("", 1)
-    assert "Fralda" not in sem and "RaÃ§Ã£o" not in sem and "Ã“culos" not in sem
+    assert "Fralda" not in sem and "RaêÂ§êÂ£o" not in sem and "êâculos" not in sem
     com = caminho.montar_plano("", 3, criancas=1, idosos=1, pets=2, remedios=True)
-    assert "Fralda" in com and "Ã“culos" in com and "RaÃ§Ã£o" in com and "uso contÃ­nuo para 14 dias" in com
+    assert "Fralda" in com and "êâculos" in com and "RaêÂ§êÂ£o" in com and "uso contêÂ­nuo para 14 dias" in com
 
 
 def test_plano_checklists_dos_riscos():
@@ -62,41 +62,41 @@ def test_plano_checklists_dos_riscos():
 
 def test_numero_brasileiro_na_tabela():
     txt = caminho.montar_plano("", 4)
-    assert "~24.000 kcal de comida pronta, sem cozinhar" in txt and "â‰ˆ 32,0 kg de alimento seco" in txt
+    assert "~24.000 kcal de comida pronta, sem cozinhar" in txt and "ê¢â°Ë 32,0 kg de alimento seco" in txt
     linha = next(l for l in txt.splitlines() if l.startswith("| Comida"))
-    assert "6,9 kg" not in linha          # 72 h nÃ£o vira quilo de comida seca: Ã© comida pronta
-    assert "pronta. sem" not in txt        # vÃ­rgula do texto nÃ£o pode virar ponto
+    assert "6,9 kg" not in linha          # 72 h nêÂ£o vira quilo de comida seca: êÂ© comida pronta
+    assert "pronta. sem" not in txt        # vêÂ­rgula do texto nêÂ£o pode virar ponto
 
 
 def test_72h_sem_cozinhar_e_14d_com_fogo():
     txt = caminho.montar_plano("", 2)
-    assert "## Comer e cozinhar sem luz" in txt and "72 horas: ninguÃ©m cozinha" in txt
+    assert "## Comer e cozinhar sem luz" in txt and "72 horas: ninguêÂ©m cozinha" in txt
     assert "geladeira" in txt and "48 h" in txt
-    # sem moradia/fogÃ£o, o plano mostra todas as opÃ§Ãµes
+    # sem moradia/fogêÂ£o, o plano mostra todas as opêÂ§êÂµes
     for f in caminho.FOGOES.values():
         assert f"### {f}" in txt
     for m in caminho.MORADIAS.values():
         assert f"### {m}" in txt
-    assert "monÃ³xido de carbono" in txt and "193" in txt
+    assert "monêÂ³xido de carbono" in txt and "193" in txt
 
 
 def test_apartamento_inducao_so_o_que_serve():
-    txt = caminho.montar_plano("", 2, moradia="apto", fogao="induÃ§Ã£o")
-    assert "### FogÃ£o elÃ©trico ou cooktop de induÃ§Ã£o" in txt and "### Apartamento" in txt
-    assert "### FogÃ£o a lenha" not in txt and "### Casa com quintal" not in txt
-    assert "Nada de lenha, carvÃ£o, churrasqueira" in txt and "proibido em muitos prÃ©dios" in txt
+    txt = caminho.montar_plano("", 2, moradia="apto", fogao="induêÂ§êÂ£o")
+    assert "### FogêÂ£o elêÂ©trico ou cooktop de induêÂ§êÂ£o" in txt and "### Apartamento" in txt
+    assert "### FogêÂ£o a lenha" not in txt and "### Casa com quintal" not in txt
+    assert "Nada de lenha, carvêÂ£o, churrasqueira" in txt and "proibido em muitos prêÂ©dios" in txt
     linha = next(l for l in txt.splitlines() if l.startswith("| Comida"))
-    assert "precisa de fogo" not in linha and "comida pronta (o fogÃ£o elÃ©trico" in linha
+    assert "precisa de fogo" not in linha and "comida pronta (o fogêÂ£o elêÂ©trico" in linha
 
 
 def test_apartamento_sem_fogao_nao_oferece_lenha():
     txt = caminho.montar_plano("", 2, moradia="apartamento")
-    assert "### FogÃ£o a lenha" not in txt and "### FogÃ£o de gÃ¡s encanado" in txt
+    assert "### FogêÂ£o a lenha" not in txt and "### FogêÂ£o de gêÂ¡s encanado" in txt
 
 
 def test_sitio_lenha():
     txt = caminho.montar_plano("", 3, moradia="sitio", fogao="lenha")
-    assert "### FogÃ£o a lenha" in txt and "chaminÃ©" in txt and "queimada" in txt
+    assert "### FogêÂ£o a lenha" in txt and "chaminêÂ©" in txt and "queimada" in txt
     assert "### Apartamento" not in txt
 
 
@@ -120,7 +120,7 @@ def test_cli_moradia_fogao(tmp_path):
 def test_manuais_e_cozinhar_existem_e_sao_citados():
     assert (RAIZ / "MANUAIS.md").is_file()
     coz = (RAIZ / "passos/1b-cozinhar-sem-luz.md").read_text(encoding="utf-8")
-    for termo in ("72 horas", "Apartamento", "lenha", "monÃ³xido", "fÃ³sforo"):
+    for termo in ("72 horas", "Apartamento", "lenha", "monêÂ³xido", "fêÂ³sforo"):
         assert termo in coz, termo
     assert "1b-cozinhar-sem-luz.md" in (RAIZ / "passos/1-casa-72h.md").read_text(encoding="utf-8")
     for g in ("guia/index.html", "guia/en/index.html", "guia/es/index.html"):
@@ -134,9 +134,9 @@ def test_todo_risco_tem_checklist_e_passos_existem():
         assert (RAIZ / arq).is_file(), arq
 
 
-def test_link_certificado_e_ARCKHÉ_club():
+def test_link_certificado_e_ARCKHê_club():
     txt = caminho.montar_plano("", 1)
-    assert "nivel-ia/guia/#certificado" in txt and "https://ARCKHÉ AI" in txt
+    assert "nivel-ia/guia/#certificado" in txt and "https://ARCKHê AI" in txt
 
 
 def test_cli_grava_arquivo(tmp_path):
@@ -180,7 +180,7 @@ def test_biblioteca_offline_3_opcoes_separadas():
 def test_comunicar_e_deslocar_no_plano():
     txt = caminho.montar_plano("", 2)
     assert "## Comunicar quando o sistema cai" in txt and "## Deslocamento" in txt
-    assert "AM/FM" in txt and "COER" in txt and "polÃ­cia" in txt
+    assert "AM/FM" in txt and "COER" in txt and "polêÂ­cia" in txt
     assert "metade" in txt and "Inmetro" in txt
     for arq in ("passos/2b-comunicar-sem-rede.md", "passos/2c-deslocamento.md"):
         assert (RAIZ / arq).is_file()

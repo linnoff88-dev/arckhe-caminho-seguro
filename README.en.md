@@ -1,15 +1,15 @@
 # caminho-seguro
 
-**ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
+**ðŸ‡§ðŸ‡· [Português](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [Espaê±ol](README.es.md)**
 
 [![caminho-seguro](guia/assets/banner-en.jpg)](https://linnoff88-dev.github.io/
 
 ## What it is
 
-The safe path is a free ARCKHÉ guide for you and your family to get through the coming years of instability: floods, tornadoes and heat with a very strong El NiÃ±o, blackouts, attacks on systems and data leaks, and work changing with robots and artificial intelligence. It has 5 simple steps: build your home kit, stop depending only on online services, protect your accounts, take care of health and agree on a family plan, and prepare your work for AI. To read it, you need nothing. If you want, a small program builds your home plan in one minute.
+The safe path is a free ARCKHÉ guide for you and your family to get through the coming years of instability: floods, tornadoes and heat with a very strong El Niê±o, blackouts, attacks on systems and data leaks, and work changing with robots and artificial intelligence. It has 5 simple steps: build your home kit, stop depending only on online services, protect your accounts, take care of health and agree on a family plan, and prepare your work for AI. To read it, you need nothing. If you want, a small program builds your home plan in one minute.
 
 **The world will face disruptions often, and those who prepare will get through them with their families safe.**  
-Caminho Seguro is a free ARCKHÉ kit with 5 steps to get through the coming years of instability: extreme weather (a very strong El NiÃ±o, floods, tornadoes, heat), digital attacks, conflicts, and work changing with robots and AI.
+Caminho Seguro is a free ARCKHÉ kit with 5 steps to get through the coming years of instability: extreme weather (a very strong El Niê±o, floods, tornadoes, heat), digital attacks, conflicts, and work changing with robots and AI.
 
 ðŸ“– Guide: **https://linnoff88-dev.github.io/
 

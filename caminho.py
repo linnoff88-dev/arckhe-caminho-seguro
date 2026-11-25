@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""caminho.py â€” monta o SEU plano do caminho seguro (kit grÃ¡tis ARCKHÉ).
+"""caminho.py ê¢â¬â monta o SEU plano do caminho seguro (kit grêÂ¡tis ARCKHê).
 
-Responde perguntas simples (ou recebe por opÃ§Ãµes) e grava um plano em Markdown, com
-quantidades para 72 horas e para 14 dias, os 5 passos e os checklists dos riscos da sua regiÃ£o.
+Responde perguntas simples (ou recebe por opêÂ§êÂµes) e grava um plano em Markdown, com
+quantidades para 72 horas e para 14 dias, os 5 passos e os checklists dos riscos da sua regiêÂ£o.
 
 Uso:
   python3 caminho.py                       # perguntas no terminal
@@ -10,7 +10,7 @@ Uso:
   python3 caminho.py --pessoas 2 --moradia apartamento --fogao inducao
   python3 caminho.py --listar-riscos
 
-Nada sai do seu computador: o script nÃ£o usa internet.
+Nada sai do seu computador: o script nêÂ£o usa internet.
 """
 from __future__ import annotations
 
@@ -19,9 +19,9 @@ import datetime as dt
 import sys
 from pathlib import Path
 
-AGUA_L_PESSOA_DIA = 2.0      # Defesa Civil: 2 litros por pessoa por dia, sÃ³ para beber
-KCAL_PESSOA_DIA = 2000       # referÃªncia de adulto
-DIAS_MINIMO = 3              # kit de 72 horas (Defesa Civil / UniÃ£o Europeia)
+AGUA_L_PESSOA_DIA = 2.0      # Defesa Civil: 2 litros por pessoa por dia, sêÂ³ para beber
+KCAL_PESSOA_DIA = 2000       # referêÂªncia de adulto
+DIAS_MINIMO = 3              # kit de 72 horas (Defesa Civil / UniêÂ£o Europeia)
 DIAS_META = 14               # meta do caminho seguro
 REVISAR_MESES = 6
 
@@ -29,139 +29,139 @@ RISCOS = {
     "enchente": "Enchente, alagamento e deslizamento",
     "vendaval": "Vendaval, tornado, granizo e ciclone",
     "calor": "Calor extremo, seca e fogo",
-    "apagao": "ApagÃ£o longo (luz, internet, celular)",
+    "apagao": "ApagêÂ£o longo (luz, internet, celular)",
     "digital": "Ataque digital e golpe depois de vazamento",
-    "conflito": "Conflito, violÃªncia e falta de abastecimento",
+    "conflito": "Conflito, violêÂªncia e falta de abastecimento",
 }
 
 MORADIAS = {
     "casa": "Casa na cidade",
-    "sitio": "Casa com quintal grande, chÃ¡cara ou sÃ­tio",
+    "sitio": "Casa com quintal grande, chêÂ¡cara ou sêÂ­tio",
     "apartamento": "Apartamento",
 }
 
 FOGOES = {
-    "botijao": "FogÃ£o a gÃ¡s de botijÃ£o",
-    "encanado": "FogÃ£o de gÃ¡s encanado",
-    "eletrico": "FogÃ£o elÃ©trico ou cooktop de induÃ§Ã£o",
-    "lenha": "FogÃ£o a lenha",
+    "botijao": "FogêÂ£o a gêÂ¡s de botijêÂ£o",
+    "encanado": "FogêÂ£o de gêÂ¡s encanado",
+    "eletrico": "FogêÂ£o elêÂ©trico ou cooktop de induêÂ§êÂ£o",
+    "lenha": "FogêÂ£o a lenha",
 }
-FOGAO_SINONIMOS = {"inducao": "eletrico", "induÃ§Ã£o": "eletrico", "elÃ©trico": "eletrico", "gas": "botijao",
-                   "gÃ¡s": "botijao", "sÃ­tio": "sitio", "chacara": "sitio", "chÃ¡cara": "sitio", "apto": "apartamento"}
+FOGAO_SINONIMOS = {"inducao": "eletrico", "induêÂ§êÂ£o": "eletrico", "elêÂ©trico": "eletrico", "gas": "botijao",
+                   "gêÂ¡s": "botijao", "sêÂ­tio": "sitio", "chacara": "sitio", "chêÂ¡cara": "sitio", "apto": "apartamento"}
 
 # 72 h = comida pronta, sem fogo. 14 dias = comida seca + um jeito de cozinhar sem luz.
 SEM_COZINHAR_72H = [
     "Primeiro a geladeira (segura o frio cerca de 4 h fechada), depois o freezer (cheio, cerca de 48 h), depois a despensa",
-    "Lata pronta: atum, sardinha, salsicha, carne, feijÃ£o e grÃ£o-de-bico prontos, milho, ervilha",
-    "PÃ£o de forma, torrada, biscoito, pasta de amendoim, castanhas",
-    "Frutas que duram fora da geladeira e frutas secas; leite de caixinha ou em pÃ³; aveia com leite frio, granola, barra de cereal",
-    "Abridor de lata manual e pratos descartÃ¡veis (poupa Ã¡gua de lavar)",
+    "Lata pronta: atum, sardinha, salsicha, carne, feijêÂ£o e grêÂ£o-de-bico prontos, milho, ervilha",
+    "PêÂ£o de forma, torrada, biscoito, pasta de amendoim, castanhas",
+    "Frutas que duram fora da geladeira e frutas secas; leite de caixinha ou em pêÂ³; aveia com leite frio, granola, barra de cereal",
+    "Abridor de lata manual e pratos descartêÂ¡veis (poupa êÂ¡gua de lavar)",
 ]
 
 COZINHAR = {
     "botijao": [
-        "FÃ³sforo ou isqueiro no kit: o acendedor elÃ©trico nÃ£o funciona sem luz (teste hoje com o fogÃ£o fora da tomada)",
-        "Anotar quando trocou o botijÃ£o e trocar antes de acabar (13 kg dura de 3 semanas a 2 meses para 4 pessoas)",
-        "BotijÃ£o em pÃ©, em lugar ventilado, longe de tomada e de calor",
+        "FêÂ³sforo ou isqueiro no kit: o acendedor elêÂ©trico nêÂ£o funciona sem luz (teste hoje com o fogêÂ£o fora da tomada)",
+        "Anotar quando trocou o botijêÂ£o e trocar antes de acabar (13 kg dura de 3 semanas a 2 meses para 4 pessoas)",
+        "BotijêÂ£o em pêÂ©, em lugar ventilado, longe de tomada e de calor",
     ],
     "encanado": [
-        "Teste hoje: desligue o disjuntor do fogÃ£o e acenda uma boca com fÃ³sforo",
-        "FÃ³sforo ou isqueiro no kit; se o gÃ¡s for cortado, siga o plano do fogÃ£o elÃ©trico",
+        "Teste hoje: desligue o disjuntor do fogêÂ£o e acenda uma boca com fêÂ³sforo",
+        "FêÂ³sforo ou isqueiro no kit; se o gêÂ¡s for cortado, siga o plano do fogêÂ£o elêÂ©trico",
     ],
     "eletrico": [
-        "Sem luz o fogÃ£o nÃ£o cozinha: guarde comida pronta para mais dias, nÃ£o sÃ³ para 72 horas",
-        "Fogareiro portÃ¡til a cartucho para ferver e esquentar, sÃ³ ao ar livre ou na varanda aberta; um cartucho para cada 1 a 2 dias",
-        "Detector de monÃ³xido de carbono a pilha em casa",
+        "Sem luz o fogêÂ£o nêÂ£o cozinha: guarde comida pronta para mais dias, nêÂ£o sêÂ³ para 72 horas",
+        "Fogareiro portêÂ¡til a cartucho para ferver e esquentar, sêÂ³ ao ar livre ou na varanda aberta; um cartucho para cada 1 a 2 dias",
+        "Detector de monêÂ³xido de carbono a pilha em casa",
     ],
     "lenha": [
         "Lenha seca, cortada e coberta, longe da parede da casa, com gravetos e papel para acender",
-        "Limpar a chaminÃ© uma vez por ano",
+        "Limpar a chaminêÂ© uma vez por ano",
     ],
 }
 
 MORAR = {
     "casa": [
-        "FogÃ£o a lenha com chaminÃ© pode ficar dentro de casa; fogareiro de tijolos ou improvisado, sÃ³ ao ar livre, longe de mato seco e de crianÃ§a",
-        "Sem quintal: fogareiro a cartucho ao ar livre, com detector de monÃ³xido em casa",
+        "FogêÂ£o a lenha com chaminêÂ© pode ficar dentro de casa; fogareiro de tijolos ou improvisado, sêÂ³ ao ar livre, longe de mato seco e de crianêÂ§a",
+        "Sem quintal: fogareiro a cartucho ao ar livre, com detector de monêÂ³xido em casa",
     ],
     "sitio": [
-        "FogÃ£o a lenha com chaminÃ© Ã© o melhor plano para semanas; sem ele, fogareiro de tijolos ao ar livre",
-        "Lenha seca guardada debaixo de telhado; respeitar a proibiÃ§Ã£o de queimada na seca, com balde de Ã¡gua do lado",
+        "FogêÂ£o a lenha com chaminêÂ© êÂ© o melhor plano para semanas; sem ele, fogareiro de tijolos ao ar livre",
+        "Lenha seca guardada debaixo de telhado; respeitar a proibiêÂ§êÂ£o de queimada na seca, com balde de êÂ¡gua do lado",
     ],
     "apartamento": [
-        "Nada de lenha, carvÃ£o, churrasqueira ou fogueira no apartamento, na sacada ou na varanda; fogareiro a cartucho sÃ³ na varanda aberta, se o prÃ©dio permitir",
-        "Se o prÃ©dio fechar o gÃ¡s (enchente, vazamento), vale o plano do fogÃ£o elÃ©trico: comida pronta",
-        "BotijÃ£o Ã© proibido em muitos prÃ©dios: conferir a regra do seu antes de comprar; nunca botijÃ£o reserva dentro do apartamento",
-        "Combinar com os vizinhos: quem tem gÃ¡s que funciona esquenta Ã¡gua para quem nÃ£o tem",
+        "Nada de lenha, carvêÂ£o, churrasqueira ou fogueira no apartamento, na sacada ou na varanda; fogareiro a cartucho sêÂ³ na varanda aberta, se o prêÂ©dio permitir",
+        "Se o prêÂ©dio fechar o gêÂ¡s (enchente, vazamento), vale o plano do fogêÂ£o elêÂ©trico: comida pronta",
+        "BotijêÂ£o êÂ© proibido em muitos prêÂ©dios: conferir a regra do seu antes de comprar; nunca botijêÂ£o reserva dentro do apartamento",
+        "Combinar com os vizinhos: quem tem gêÂ¡s que funciona esquenta êÂ¡gua para quem nêÂ£o tem",
     ],
 }
 
-NUNCA_DENTRO = ("Nunca carvÃ£o, churrasqueira, braseiro ou gerador dentro de casa, na garagem fechada ou perto de janela "
-                "(monÃ³xido de carbono nÃ£o tem cheiro e mata). Dor de cabeÃ§a e enjoo em vÃ¡rias pessoas ao mesmo tempo: "
+NUNCA_DENTRO = ("Nunca carvêÂ£o, churrasqueira, braseiro ou gerador dentro de casa, na garagem fechada ou perto de janela "
+                "(monêÂ³xido de carbono nêÂ£o tem cheiro e mata). Dor de cabeêÂ§a e enjoo em vêÂ¡rias pessoas ao mesmo tempo: "
                 "saia para o ar livre e ligue 193.")
 
 COMUNICAR = [
-    "Bateria portÃ¡til (power bank) carregada: 10.000 mAh dÃ¡ cerca de 1 a 2 cargas do celular; recarregar todo mÃªs",
+    "Bateria portêÂ¡til (power bank) carregada: 10.000 mAh dêÂ¡ cerca de 1 a 2 cargas do celular; recarregar todo mêÂªs",
     "Carregador USB de carro (motor ligado, carro ao ar livre) e, para muitos dias, painel solar pequeno",
-    "RÃ¡dio AM/FM a pilha ou manivela, pilhas extras e as frequÃªncias das rÃ¡dios da cidade no papel",
-    "Celular em economia de bateria, ligado em horÃ¡rios combinados; SMS passa quando a internet nÃ£o passa",
-    "Walkie-talkie homologado de uso livre para a famÃ­lia e os vizinhos (sem licenÃ§a)",
-    "Quem quiser ir alÃ©m: RÃ¡dio do CidadÃ£o (cadastro grÃ¡tis na Anatel) ou radioamador (prova do COER, LABRE do estado)",
-    "Nunca transmitir na frequÃªncia da polÃ­cia, bombeiros, SAMU ou aviaÃ§Ã£o: Ã© crime e atrapalha o socorro",
+    "RêÂ¡dio AM/FM a pilha ou manivela, pilhas extras e as frequêÂªncias das rêÂ¡dios da cidade no papel",
+    "Celular em economia de bateria, ligado em horêÂ¡rios combinados; SMS passa quando a internet nêÂ£o passa",
+    "Walkie-talkie homologado de uso livre para a famêÂ­lia e os vizinhos (sem licenêÂ§a)",
+    "Quem quiser ir alêÂ©m: RêÂ¡dio do CidadêÂ£o (cadastro grêÂ¡tis na Anatel) ou radioamador (prova do COER, LABRE do estado)",
+    "Nunca transmitir na frequêÂªncia da polêÂ­cia, bombeiros, SAMU ou aviaêÂ§êÂ£o: êÂ© crime e atrapalha o socorro",
 ]
 
 DESLOCAR = [
-    "Tanque nunca abaixo da metade (carro elÃ©trico: bateria acima da metade); sem luz a bomba do posto nÃ£o funciona",
-    "Kit do carro: Ã¡gua, comida leve, lanterna, carregador, mapa de papel ou offline, cobertor, primeiros socorros",
-    "Duas rotas atÃ© o ponto de encontro e atÃ© um parente fora da cidade, uma sem ponte nem rua que alaga; saber ir a pÃ©",
-    "Reserva de combustÃ­vel sÃ³ em casa ou sÃ­tio, pouca, em galÃ£o com selo do Inmetro, fora de casa; nunca em apartamento",
+    "Tanque nunca abaixo da metade (carro elêÂ©trico: bateria acima da metade); sem luz a bomba do posto nêÂ£o funciona",
+    "Kit do carro: êÂ¡gua, comida leve, lanterna, carregador, mapa de papel ou offline, cobertor, primeiros socorros",
+    "Duas rotas atêÂ© o ponto de encontro e atêÂ© um parente fora da cidade, uma sem ponte nem rua que alaga; saber ir a pêÂ©",
+    "Reserva de combustêÂ­vel sêÂ³ em casa ou sêÂ­tio, pouca, em galêÂ£o com selo do Inmetro, fora de casa; nunca em apartamento",
     "Sem carro: bicicleta com pneu cheio e carona combinada com um vizinho; apartamento: sem luz o elevador para, combinar quem ajuda os idosos",
-    "Sem nenhum aparelho: ponto de encontro com horÃ¡rio, bilhete na porta e um parente fora da cidade que todos avisam",
+    "Sem nenhum aparelho: ponto de encontro com horêÂ¡rio, bilhete na porta e um parente fora da cidade que todos avisam",
 ]
 
 CHECK_RISCO = {
     "enchente": [
-        "Saber se a sua rua ou bairro jÃ¡ alagou e qual Ã© o caminho atÃ© um lugar alto",
-        "Documentos, remÃ©dios e o kit num lugar ALTO da casa, em saco Ã  prova d'Ã¡gua",
+        "Saber se a sua rua ou bairro jêÂ¡ alagou e qual êÂ© o caminho atêÂ© um lugar alto",
+        "Documentos, remêÂ©dios e o kit num lugar ALTO da casa, em saco êÂ  prova d'êÂ¡gua",
         "Cadastrar o celular no alerta da Defesa Civil (SMS 40199 com o seu CEP)",
-        "Saber desligar a chave geral de luz e o registro do gÃ¡s",
-        "Nunca atravessar Ã¡gua correndo, a pÃ© ou de carro",
+        "Saber desligar a chave geral de luz e o registro do gêÂ¡s",
+        "Nunca atravessar êÂ¡gua correndo, a pêÂ© ou de carro",
     ],
     "vendaval": [
-        "Escolher o cÃ´modo mais protegido: no centro da casa, sem janela, andar mais baixo",
-        "Ter calÃ§ado fechado, apito e capacete ou travesseiro perto desse cÃ´modo",
-        "Saber os sinais: cÃ©u esverdeado, granizo, ronco contÃ­nuo como de trem",
+        "Escolher o cêÂ´modo mais protegido: no centro da casa, sem janela, andar mais baixo",
+        "Ter calêÂ§ado fechado, apito e capacete ou travesseiro perto desse cêÂ´modo",
+        "Saber os sinais: cêÂ©u esverdeado, granizo, ronco contêÂ­nuo como de trem",
         "Recolher objetos soltos do quintal quando vier o alerta",
-        "Depois: cuidado com fio caÃ­do e telhado solto",
+        "Depois: cuidado com fio caêÂ­do e telhado solto",
     ],
     "calor": [
-        "Ãgua extra para os dias quentes e sais de reidrataÃ§Ã£o no kit",
-        "Saber quem da famÃ­lia tem mais risco: idoso, bebÃª, quem toma remÃ©dio contÃ­nuo",
-        "Um cÃ´modo mais fresco, com pano Ãºmido e ventilaÃ§Ã£o cruzada",
-        "Plano de saÃ­da se houver fogo perto: duas rotas e um ponto de encontro",
-        "MÃ¡scara para fumaÃ§a no kit",
+        "êÂgua extra para os dias quentes e sais de reidrataêÂ§êÂ£o no kit",
+        "Saber quem da famêÂ­lia tem mais risco: idoso, bebêÂª, quem toma remêÂ©dio contêÂ­nuo",
+        "Um cêÂ´modo mais fresco, com pano êÂºmido e ventilaêÂ§êÂ£o cruzada",
+        "Plano de saêÂ­da se houver fogo perto: duas rotas e um ponto de encontro",
+        "MêÂ¡scara para fumaêÂ§a no kit",
     ],
     "apagao": [
-        "Lanterna e rÃ¡dio a pilha (ou a manivela) com pilhas extras",
-        "Carregador portÃ¡til (power bank) sempre carregado",
-        "Comida pronta para 3 dias, que nÃ£o precisa de fogo nem de geladeira",
-        "FÃ³sforo ou isqueiro: o fogÃ£o a gÃ¡s acende sem luz, o acendedor elÃ©trico nÃ£o",
+        "Lanterna e rêÂ¡dio a pilha (ou a manivela) com pilhas extras",
+        "Carregador portêÂ¡til (power bank) sempre carregado",
+        "Comida pronta para 3 dias, que nêÂ£o precisa de fogo nem de geladeira",
+        "FêÂ³sforo ou isqueiro: o fogêÂ£o a gêÂ¡s acende sem luz, o acendedor elêÂ©trico nêÂ£o",
         "Dinheiro vivo para alguns dias de compras",
-        "NÃºmeros importantes escritos no papel, nÃ£o sÃ³ no celular",
+        "NêÂºmeros importantes escritos no papel, nêÂ£o sêÂ³ no celular",
     ],
     "digital": [
-        "VerificaÃ§Ã£o em duas etapas: APLICATIVO autenticador no e-mail (nÃ£o SMS), PIN no WhatsApp, token do app no banco",
+        "VerificaêÂ§êÂ£o em duas etapas: APLICATIVO autenticador no e-mail (nêÂ£o SMS), PIN no WhatsApp, token do app no banco",
         "Senha diferente em cada conta importante (um gerenciador de senhas ajuda)",
         "Desconfiar de mensagem com seu nome e CPF certos pedindo dado, senha ou Pix",
         "Conferir no Registrato do Banco Central contas e chaves Pix no seu nome",
-        "Combinar uma palavra-senha da famÃ­lia para pedido de dinheiro por mensagem",
+        "Combinar uma palavra-senha da famêÂ­lia para pedido de dinheiro por mensagem",
     ],
     "conflito": [
-        "Comida e Ã¡gua para 14 dias, guardadas sem chamar atenÃ§Ã£o",
+        "Comida e êÂ¡gua para 14 dias, guardadas sem chamar atenêÂ§êÂ£o",
         "Rotas para casa de parentes e um ponto de encontro fora do bairro",
-        "Documentos e cÃ³pias num envelope fÃ¡cil de pegar",
-        "Rede de vizinhos de confianÃ§a com um jeito de se avisar",
-        "Seguir sÃ³ avisos de Ã³rgÃ£os oficiais; nÃ£o espalhar boato",
+        "Documentos e cêÂ³pias num envelope fêÂ¡cil de pegar",
+        "Rede de vizinhos de confianêÂ§a com um jeito de se avisar",
+        "Seguir sêÂ³ avisos de êÂ³rgêÂ£os oficiais; nêÂ£o espalhar boato",
     ],
 }
 
@@ -169,17 +169,17 @@ PASSOS = [
     ("1. Casa: o kit de 72 horas, depois 14 dias",
      "passos/1-casa-72h.md"),
     ("1b. Comer e cozinhar sem luz", "passos/1b-cozinhar-sem-luz.md"),
-    ("2. NÃ£o depender sÃ³ do online", "passos/2-fora-do-online.md"),
+    ("2. NêÂ£o depender sêÂ³ do online", "passos/2-fora-do-online.md"),
     ("2b. Comunicar quando o sistema cai", "passos/2b-comunicar-sem-rede.md"),
     ("2c. Deslocamento: tanque e rotas", "passos/2c-deslocamento.md"),
-    ("3. ProteÃ§Ã£o digital", "passos/3-digital.md"),
-    ("4. SaÃºde e pessoas", "passos/4-saude-e-pessoas.md"),
-    ("5. Trabalho: a migraÃ§Ã£o para a IA", "passos/5-trabalho-ia.md"),
+    ("3. ProteêÂ§êÂ£o digital", "passos/3-digital.md"),
+    ("4. SaêÂºde e pessoas", "passos/4-saude-e-pessoas.md"),
+    ("5. Trabalho: a migraêÂ§êÂ£o para a IA", "passos/5-trabalho-ia.md"),
 ]
 
 
 def quantidades(pessoas: int, dias: int) -> dict:
-    """Ãgua (L), garrafÃµes de 5 L, calorias e uma sugestÃ£o de comida para `pessoas` Ã— `dias`."""
+    """êÂgua (L), garrafêÂµes de 5 L, calorias e uma sugestêÂ£o de comida para `pessoas` êâ `dias`."""
     if pessoas < 1:
         raise ValueError("pessoas precisa ser 1 ou mais")
     if dias < 1:
@@ -192,13 +192,13 @@ def quantidades(pessoas: int, dias: int) -> dict:
         "agua_l": agua,
         "garrafoes_5l": -(-int(agua) // 5),          # arredonda para cima
         "kcal": kcal,
-        # alimento seco (arroz, feijÃ£o, macarrÃ£o, aveia) tem ~3.500 kcal por kg
+        # alimento seco (arroz, feijêÂ£o, macarrêÂ£o, aveia) tem ~3.500 kcal por kg
         "kg_seco": round(kcal / 3500, 1),
     }
 
 
 def br(n: float, casas: int = 0) -> str:
-    """NÃºmero no jeito brasileiro: 24.000 e 6,9."""
+    """NêÂºmero no jeito brasileiro: 24.000 e 6,9."""
     return f"{n:,.{casas}f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
 
@@ -213,14 +213,14 @@ def normaliza(valor: str | None, validos: dict, nome: str) -> str | None:
 
 
 def secao_cozinhar(moradia: str | None, fogao: str | None) -> list[str]:
-    """Comer sem cozinhar nas 72 h; depois, como cozinhar sem luz conforme moradia e fogÃ£o."""
+    """Comer sem cozinhar nas 72 h; depois, como cozinhar sem luz conforme moradia e fogêÂ£o."""
     if moradia == "apartamento" and fogao == "lenha":
-        raise ValueError("fogÃ£o a lenha em apartamento nÃ£o entra no plano: escolha botijao, encanado ou eletrico")
+        raise ValueError("fogêÂ£o a lenha em apartamento nêÂ£o entra no plano: escolha botijao, encanado ou eletrico")
     L = ["## Comer e cozinhar sem luz", "",
-         "**72 horas: ninguÃ©m cozinha.** A famÃ­lia come o que jÃ¡ estÃ¡ pronto.", ""]
+         "**72 horas: ninguêÂ©m cozinha.** A famêÂ­lia come o que jêÂ¡ estêÂ¡ pronto.", ""]
     L += [f"- [ ] {c}" for c in SEM_COZINHAR_72H] + [""]
-    L += ["**Mais de 3 dias: como cozinhar.** O estoque de arroz, macarrÃ£o e feijÃ£o precisa de fogo e de Ã¡gua "
-          "extra para cozinhar (os 2 L por dia sÃ£o sÃ³ para beber).", ""]
+    L += ["**Mais de 3 dias: como cozinhar.** O estoque de arroz, macarrêÂ£o e feijêÂ£o precisa de fogo e de êÂ¡gua "
+          "extra para cozinhar (os 2 L por dia sêÂ£o sêÂ³ para beber).", ""]
     fogoes = [fogao] if fogao else list(COZINHAR)
     if moradia == "apartamento" and not fogao:
         fogoes = ["botijao", "encanado", "eletrico"]
@@ -229,7 +229,7 @@ def secao_cozinhar(moradia: str | None, fogao: str | None) -> list[str]:
         L += [f"### {FOGOES[f]}", ""] + [f"- [ ] {c}" for c in COZINHAR[f]] + [""]
     for m in moradias:
         L += [f"### {MORADIAS[m]}", ""] + [f"- [ ] {c}" for c in MORAR[m]] + [""]
-    L += ["- [ ] Truques: comida que cozinha rÃ¡pido, feijÃ£o de lata, panela tampada, garrafa tÃ©rmica e calor guardado "
+    L += ["- [ ] Truques: comida que cozinha rêÂ¡pido, feijêÂ£o de lata, panela tampada, garrafa têÂ©rmica e calor guardado "
           "(ferve, desliga, enrola a panela no cobertor)", "",
           f"> {NUNCA_DENTRO}", "",
           "Detalhe em `passos/1b-cozinhar-sem-luz.md`. Manuais oficiais prontos: `MANUAIS.md`.", ""]
@@ -258,38 +258,38 @@ def montar_plano(nome: str, pessoas: int, criancas: int = 0, idosos: int = 0, pe
     hoje = hoje or dt.date.today()
     rev = hoje + dt.timedelta(days=round(REVISAR_MESES * 30.4))
     moradia = normaliza(moradia, MORADIAS, "moradia")
-    fogao = normaliza(fogao, FOGOES, "fogÃ£o")
+    fogao = normaliza(fogao, FOGOES, "fogêÂ£o")
     q3 = quantidades(pessoas, DIAS_MINIMO)
     q14 = quantidades(pessoas, DIAS_META)
-    titulo = f"Plano do caminho seguro â€” {nome}" if nome else "Plano do caminho seguro"
+    titulo = f"Plano do caminho seguro ê¢â¬â {nome}" if nome else "Plano do caminho seguro"
     L = [f"# {titulo}", "",
-         f"Feito em {hoje:%d/%m/%Y}. **Revisar em {rev:%d/%m/%Y}** (validade de comida, remÃ©dio e pilha).", "",
+         f"Feito em {hoje:%d/%m/%Y}. **Revisar em {rev:%d/%m/%Y}** (validade de comida, remêÂ©dio e pilha).", "",
          f"Casa: {pessoas} pessoa(s)"
-         + (f", {criancas} crianÃ§a(s)" if criancas else "")
+         + (f", {criancas} crianêÂ§a(s)" if criancas else "")
          + (f", {idosos} idoso(s)" if idosos else "")
          + (f", {pets} pet(s)" if pets else "") + "."
          + (f" {MORADIAS[moradia]}." if moradia else "")
          + (f" {FOGOES[fogao]}." if fogao else ""), "",
          "## Quanto guardar", "",
-         "| | 72 horas (mÃ­nimo) | 14 dias (meta) |",
+         "| | 72 horas (mêÂ­nimo) | 14 dias (meta) |",
          "|---|---|---|",
-         f"| Ãgua para beber (2 L por pessoa por dia) | {q3['agua_l']:.0f} L ({q3['garrafoes_5l']} garrafÃµes de 5 L) "
-         f"| {q14['agua_l']:.0f} L ({q14['garrafoes_5l']} garrafÃµes de 5 L) |",
+         f"| êÂgua para beber (2 L por pessoa por dia) | {q3['agua_l']:.0f} L ({q3['garrafoes_5l']} garrafêÂµes de 5 L) "
+         f"| {q14['agua_l']:.0f} L ({q14['garrafoes_5l']} garrafêÂµes de 5 L) |",
          f"| Comida | ~{br(q3['kcal'])} kcal de comida pronta, sem cozinhar "
-         + (f"| ~{br(q14['kcal'])} kcal, a maior parte comida pronta (o fogÃ£o elÃ©trico nÃ£o cozinha sem luz) |"
+         + (f"| ~{br(q14['kcal'])} kcal, a maior parte comida pronta (o fogêÂ£o elêÂ©trico nêÂ£o cozinha sem luz) |"
           if fogao == "eletrico" else
-          f"| ~{br(q14['kcal'])} kcal (â‰ˆ {br(q14['kg_seco'], 1)} kg de alimento seco, que precisa de fogo) |"),
-         "", "Ãgua de higiene e de cozinhar Ã© Ã  parte. 72 h: lata pronta, biscoito, pÃ£o, castanhas, leite de caixinha "
-         "(ninguÃ©m cozinha). 14 dias: o que a famÃ­lia jÃ¡ come e que dura (arroz, feijÃ£o, macarrÃ£o, aveia, enlatados), "
+          f"| ~{br(q14['kcal'])} kcal (ê¢â°Ë {br(q14['kg_seco'], 1)} kg de alimento seco, que precisa de fogo) |"),
+         "", "êÂgua de higiene e de cozinhar êÂ© êÂ  parte. 72 h: lata pronta, biscoito, pêÂ£o, castanhas, leite de caixinha "
+         "(ninguêÂ©m cozinha). 14 dias: o que a famêÂ­lia jêÂ¡ come e que dura (arroz, feijêÂ£o, macarrêÂ£o, aveia, enlatados), "
          "com um jeito de cozinhar sem luz. Gire: use e reponha.", ""]
     if criancas:
-        L += ["- [ ] Fralda, leite/fÃ³rmula, remÃ©dio infantil e um brinquedo ou livro para cada crianÃ§a"]
+        L += ["- [ ] Fralda, leite/fêÂ³rmula, remêÂ©dio infantil e um brinquedo ou livro para cada crianêÂ§a"]
     if idosos:
-        L += ["- [ ] Ã“culos reserva, aparelho auditivo/pilhas e a lista de remÃ©dios de cada idoso"]
+        L += ["- [ ] êâculos reserva, aparelho auditivo/pilhas e a lista de remêÂ©dios de cada idoso"]
     if pets:
-        L += ["- [ ] RaÃ§Ã£o e Ã¡gua do pet para os mesmos 14 dias, guia, caixa de transporte e cartÃ£o de vacina"]
+        L += ["- [ ] RaêÂ§êÂ£o e êÂ¡gua do pet para os mesmos 14 dias, guia, caixa de transporte e cartêÂ£o de vacina"]
     if remedios or idosos:
-        L += ["- [ ] RemÃ©dios de uso contÃ­nuo para 14 dias a mais e cÃ³pia da receita guardada no kit"]
+        L += ["- [ ] RemêÂ©dios de uso contêÂ­nuo para 14 dias a mais e cêÂ³pia da receita guardada no kit"]
     if criancas or idosos or pets or remedios:
         L += [""]
     L += secao_cozinhar(moradia, fogao)
@@ -297,22 +297,22 @@ def montar_plano(nome: str, pessoas: int, criancas: int = 0, idosos: int = 0, pe
     L += ["## Deslocamento", ""] + [f"- [ ] {c}" for c in DESLOCAR] + [""]
     L += ["## Os 5 passos", ""]
     for t, arq in PASSOS:
-        L += [f"- [ ] **{t}** â€” ver `{arq}`"]
+        L += [f"- [ ] **{t}** ê¢â¬â ver `{arq}`"]
     L += [""]
     if riscos:
-        L += ["## Os riscos da sua regiÃ£o", ""]
+        L += ["## Os riscos da sua regiêÂ£o", ""]
         for r in riscos:
             L += [f"### {RISCOS[r]}", ""] + [f"- [ ] {c}" for c in CHECK_RISCO[r]] + [""]
     L += ["## Folha da geladeira", "",
-          "- Defesa Civil **199** Â· Bombeiros **193** Â· SAMU **192** Â· PolÃ­cia **190**",
-          "- Ponto de encontro da famÃ­lia: ______________________",
-          "- Quem busca as crianÃ§as: ______________________",
+          "- Defesa Civil **199** êÂ· Bombeiros **193** êÂ· SAMU **192** êÂ· PolêÂ­cia **190**",
+          "- Ponto de encontro da famêÂ­lia: ______________________",
+          "- Quem busca as crianêÂ§as: ______________________",
           "- Parente fora da cidade (contato de todos): ______________________", "",
           "## Trabalho", "",
-          "- [ ] Descobrir o meu nÃ­vel de IA (certificado grÃ¡tis): https://linnoff88-dev.github.io/
-          "- [ ] Escolher a prÃ³xima tarefa do meu trabalho para a IA fazer comigo",
-          "- [ ] Aprender de graÃ§a no https://ARCKHÉ AI", "",
-          "_Kit caminho-seguro (ARCKHÉ, grÃ¡tis). NÃ£o substitui a orientaÃ§Ã£o da Defesa Civil da sua cidade._", ""]
+          "- [ ] Descobrir o meu nêÂ­vel de IA (certificado grêÂ¡tis): https://linnoff88-dev.github.io/
+          "- [ ] Escolher a prêÂ³xima tarefa do meu trabalho para a IA fazer comigo",
+          "- [ ] Aprender de graêÂ§a no https://ARCKHê AI", "",
+          "_Kit caminho-seguro (ARCKHê, grêÂ¡tis). NêÂ£o substitui a orientaêÂ§êÂ£o da Defesa Civil da sua cidade._", ""]
     return "\n".join(L)
 
 
@@ -322,16 +322,16 @@ def perguntar(msg: str, padrao: str = "") -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description="Monta o seu plano do caminho seguro (grÃ¡tis, sem internet).")
-    ap.add_argument("--nome", default=None, help="nome da famÃ­lia (aparece no tÃ­tulo)")
+    ap = argparse.ArgumentParser(description="Monta o seu plano do caminho seguro (grêÂ¡tis, sem internet).")
+    ap.add_argument("--nome", default=None, help="nome da famêÂ­lia (aparece no têÂ­tulo)")
     ap.add_argument("--pessoas", type=int)
     ap.add_argument("--criancas", type=int, default=0)
     ap.add_argument("--idosos", type=int, default=0)
     ap.add_argument("--pets", type=int, default=0)
-    ap.add_argument("--remedios", action="store_true", help="alguÃ©m toma remÃ©dio de uso contÃ­nuo")
+    ap.add_argument("--remedios", action="store_true", help="alguêÂ©m toma remêÂ©dio de uso contêÂ­nuo")
     ap.add_argument("--riscos", default=None, help="lista: " + ",".join(RISCOS))
     ap.add_argument("--moradia", default=None, help="onde mora: " + ",".join(MORADIAS))
-    ap.add_argument("--fogao", default=None, help="fogÃ£o: " + ",".join(FOGOES) + " (inducao = eletrico)")
+    ap.add_argument("--fogao", default=None, help="fogêÂ£o: " + ",".join(FOGOES) + " (inducao = eletrico)")
     ap.add_argument("--saida", default="meu-plano.md")
     ap.add_argument("--listar-riscos", action="store_true")
     a = ap.parse_args(argv)
@@ -342,17 +342,17 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     try:
         if a.pessoas is None:  # modo perguntas
-            print("Caminho seguro â€” o seu plano (Enter aceita o padrÃ£o)\n")
-            a.nome = perguntar("Nome da famÃ­lia", a.nome or "")
+            print("Caminho seguro ê¢â¬â o seu plano (Enter aceita o padrêÂ£o)\n")
+            a.nome = perguntar("Nome da famêÂ­lia", a.nome or "")
             a.pessoas = int(perguntar("Quantas pessoas moram na casa", "2"))
-            a.criancas = int(perguntar("Quantas sÃ£o crianÃ§as", "0"))
-            a.idosos = int(perguntar("Quantas sÃ£o idosas", "0"))
+            a.criancas = int(perguntar("Quantas sêÂ£o crianêÂ§as", "0"))
+            a.idosos = int(perguntar("Quantas sêÂ£o idosas", "0"))
             a.pets = int(perguntar("Quantos pets", "0"))
-            a.remedios = perguntar("AlguÃ©m toma remÃ©dio de uso contÃ­nuo? (s/n)", "n").lower().startswith("s")
+            a.remedios = perguntar("AlguêÂ©m toma remêÂ©dio de uso contêÂ­nuo? (s/n)", "n").lower().startswith("s")
             print("Riscos: " + ", ".join(RISCOS))
-            a.riscos = perguntar("Quais riscos tem na sua regiÃ£o (separe por vÃ­rgula)", "apagao,digital")
+            a.riscos = perguntar("Quais riscos tem na sua regiêÂ£o (separe por vêÂ­rgula)", "apagao,digital")
             a.moradia = perguntar("Onde mora (" + ", ".join(MORADIAS) + ")", "casa")
-            a.fogao = perguntar("Qual Ã© o seu fogÃ£o (" + ", ".join(FOGOES) + ")", "botijao")
+            a.fogao = perguntar("Qual êÂ© o seu fogêÂ£o (" + ", ".join(FOGOES) + ")", "botijao")
         riscos = parse_riscos(a.riscos or "apagao,digital")
         plano = montar_plano(a.nome or "", a.pessoas, a.criancas, a.idosos, a.pets, a.remedios, riscos,
                              moradia=a.moradia, fogao=a.fogao)
@@ -360,11 +360,11 @@ def main(argv: list[str] | None = None) -> int:
         print(f"erro: {e}", file=sys.stderr)
         return 2
     except (EOFError, KeyboardInterrupt):
-        print("\nsaÃ­ sem gravar nada.", file=sys.stderr)
+        print("\nsaêÂ­ sem gravar nada.", file=sys.stderr)
         return 1
     Path(a.saida).write_text(plano, encoding="utf-8")
     q = quantidades(a.pessoas, DIAS_MINIMO)
-    print(f"ok: {a.saida} â€” 72 h: {q['agua_l']:.0f} L de Ã¡gua; revise em {REVISAR_MESES} meses")
+    print(f"ok: {a.saida} ê¢â¬â 72 h: {q['agua_l']:.0f} L de êÂ¡gua; revise em {REVISAR_MESES} meses")
     return 0
 
 

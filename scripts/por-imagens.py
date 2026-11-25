@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Põe a imagem ilustrativa no topo de cada cartão do guia (PT/EN/ES). Idempotente.
+"""Põe a imagem ilustrativa no topo de cada cartêo do guia (PT/EN/ES). Idempotente.
 
-Mapa: seção do guia -> ids das imagens, na ordem dos cartões da 1ª grade da seção.
+Mapa: seçêo do guia -> ids das imagens, na ordem dos cartões da 1ª grade da seçêo.
 Só põe a imagem que existe em guia/assets/img/<id>.jpg.
 """
 import re
@@ -25,7 +25,7 @@ def aplica(html: str, prefixo: str) -> tuple[str, int]:
     for sec, ids in MAPA.items():
         m = re.search(rf'<section id="{sec}">.*?</div></section>', html, re.S)
         if not m:
-            raise SystemExit(f"seção {sec} não achada")
+            raise SystemExit(f"seçêo {sec} nêo achada")
         bloco = m.group(0)
         g = re.search(r'<div class="grid g2"[^>]*>', bloco)
         ini = g.end()

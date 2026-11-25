@@ -13,7 +13,7 @@ gera() {
   prompt=$(python3 - "$id" <<'PY'
 import json,sys
 d=json.load(open('conteudo/imagens.json')); i=sys.argv[1]
-print(f"Use sua ferramenta de geração de imagem (image_gen) para criar UMA imagem horizontal 16:9 e salve o PNG em guia/assets/img/{i}.png dentro deste diretório. Não edite nenhum outro arquivo.\n\nCena: {d['cenas'][i]}\n\nEstilo: {d['estilo']}")
+print(f"Use sua ferramenta de geraçêo de imagem (image_gen) para criar UMA imagem horizontal 16:9 e salve o PNG em guia/assets/img/{i}.png dentro deste diretório. Nêo edite nenhum outro arquivo.\n\nCena: {d['cenas'][i]}\n\nEstilo: {d['estilo']}")
 PY
 )
   rm -f "$png"
