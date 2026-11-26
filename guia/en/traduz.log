@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>caminho-seguro — the world will stop frequently; your family can get through it safely</title>
 <meta name="description" content="The safe path: 5 free steps to get through the coming years of instability — a 72-hour kit, not relying only on being online, digital protection, health and family, and working with AI.">
-<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/caminho-seguro/guia/">
-<link rel="alternate" hreflang="en" href="https://inematds.github.io/caminho-seguro/guia/en/">
-<link rel="alternate" hreflang="es" href="https://inematds.github.io/caminho-seguro/guia/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://linnoff88-dev.github.io/arckhe-/guia/">
+<link rel="alternate" hreflang="en" href="https://linnoff88-dev.github.io/arckhe-/guia/en/">
+<link rel="alternate" hreflang="es" href="https://linnoff88-dev.github.io/arckhe-/guia/es/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -40,8 +40,8 @@
   nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
   nav .brand .emoji{font-size:1.25rem}
   nav .sep{color:var(--mut);opacity:.45}
-  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
-  nav .inema:hover{filter:brightness(1.15)}
+  nav .ARCKHÉ{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .ARCKHÉ:hover{filter:brightness(1.15)}
   nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
@@ -111,9 +111,9 @@
   <a class="brand" href="#top"><span class="emoji">🧭</span> caminho-seguro</a>
   <span class="sep">|</span>
   <span class="clubpro">
-    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <a class="ARCKHÉ" href="https://ARCKHÉ AI" target="_blank" rel="noopener">ARCKHÉ AI</a>
     <span class="sep">-</span>
-    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+    <a class="pro" href="https://ARCKHÉ.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
     <a class="sec" href="#porque">Why now</a>
@@ -122,7 +122,7 @@
     <a class="sec" href="#tecnico">Kit (technical)</a>
     <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
-    <a class="btn" href="https://github.com/inematds/caminho-seguro" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://github.com/linnoff88-dev/caminho-seguro" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
@@ -135,7 +135,7 @@
       <p class="lead">Could you get through three days without power, internet, or banking? Extreme weather, digital attacks, and AI changing the way we work are already here. Those who prepare now can get through it calmly.</p>
       <div class="cta">
         <a class="btn" href="#video">Understand it in 5 minutes</a>
-        <a class="btn ghost" href="https://github.com/inematds/caminho-seguro" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn ghost" href="https://github.com/linnoff88-dev/caminho-seguro" target="_blank" rel="noopener">View on GitHub</a>
       </div>
     </div>
     <figure><img src="assets/banner.jpg" alt="The safe path: the world will stop frequently, and your family can get through it safely"></figure>
@@ -144,7 +144,7 @@
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">In brief</span>
-  <p>The safe path is a free INEMA guide to help you and your family get through the coming years of instability: floods, tornadoes, and heat with a very strong El Niño; blackouts; attacks on systems and data leaks; and work changing with robots and artificial intelligence. There are <strong>5 simple steps</strong>: put together a home kit, don’t rely only on being online, protect your accounts, look after your health and make a plan with your family, and prepare your work for AI. You don’t need anything to read the guide. If you want, a small program can put together a plan for your home in one minute.</p>
+  <p>The safe path is a free ARCKHÉ guide to help you and your family get through the coming years of instability: floods, tornadoes, and heat with a very strong El Niño; blackouts; attacks on systems and data leaks; and work changing with robots and artificial intelligence. There are <strong>5 simple steps</strong>: put together a home kit, don’t rely only on being online, protect your accounts, look after your health and make a plan with your family, and prepare your work for AI. You don’t need anything to read the guide. If you want, a small program can put together a plan for your home in one minute.</p>
   <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="The safe path: 72-hour kit, offline readiness, digital protection, health and family, working with AI, a plan in 1 minute" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
@@ -164,7 +164,7 @@
     <div class="card"><h3>💻 Attacks in Brazil</h3><p>The Port of Santos had its systems taken down in an attack (since 06/11). Caixa Vida e Previdência exposed data belonging to around <strong>7.6 million</strong> customers. The National Treasury exposed <strong>30,000</strong> records and <strong>4,000 Pix keys</strong>. The danger now is a scammer who has your correct name and CPF.</p></div>
     <div class="card"><h3>🌧️ Very strong El Niño</h3><p>NOAA, the US weather agency, gave a <strong>more than 90% chance</strong> of a very strong El Niño between late 2026 and early 2027. In Brazil: more rain, storms, and flooding in the South; heat, drought, and fires in the Center-North. Greater risk does not mean disaster is certain, but it is time to prepare.</p></div>
   </div>
-  <div class="card" style="margin-top:16px"><h3>🧭 A perspective from someone who monitors the climate</h3><p>"I’ve worked in technology for 40 years, monitor the climate, have been to Antarctica and the Arctic, and have worked with businesses, education, and government. My reading is that <strong>five very turbulent years are ahead</strong>, almost like a war: climate, attacks, power struggles, factions, and an economy changing with robots and AI. And today I can say: we can get through this difficult time." — Nei Maldaner, INEMA</p></div>
+  <div class="card" style="margin-top:16px"><h3>🧭 A perspective from someone who monitors the climate</h3><p>"I’ve worked in technology for 40 years, monitor the climate, have been to Antarctica and the Arctic, and have worked with businesses, education, and government. My reading is that <strong>five very turbulent years are ahead</strong>, almost like a war: climate, attacks, power struggles, factions, and an economy changing with robots and AI. And today I can say: we can get through this difficult time." — Nei Maldaner, ARCKHÉ</p></div>
 </div></section>
 
 <section id="passos"><div class="wrap">
@@ -186,11 +186,11 @@
   <h2>Get to the other side <span class="amb">with a job</span></h2>
   <p class="sub">Robots and artificial intelligence will take over a large part of the work. Companies that don’t prepare will have to change or fail. Those who prepare will change roles; those who wait will be laid off.</p>
   <div class="grid g3">
-    <div class="card"><h3>📏 Find out your AI level</h3><p>The kit’s free certificate at <a href="https://inematds.github.io/nivel-ia/guia/#certificado" target="_blank" rel="noopener">nivel-ia</a> shows how much of your work AI already does, on a 5-step scale (AL1 to AL5). If you only use ChatGPT in a browser, use the paper worksheet. It is a measurement, not a diploma.</p></div>
+    <div class="card"><h3>📏 Find out your AI level</h3><p>The kit’s free certificate at <a href="https://linnoff88-dev.github.io/arckhe-/guia/#certificado" target="_blank" rel="noopener">nivel-ia</a> shows how much of your work AI already does, on a 5-step scale (AL1 to AL5). If you only use ChatGPT in a browser, use the paper worksheet. It is a measurement, not a diploma.</p></div>
     <div class="card"><h3>📈 Evidence from someone who measured</h3><p>Nei measured his own work over 90 days: <strong>48.9%</strong> is already driven by AI, and in ten weeks it rose from 11% to 61%. This is a measurement from his machine, not a countrywide statistic—but it shows how quickly things are changing.</p></div>
-    <div class="card"><h3>🎓 Learn for free</h3><p>Write down your field and three tasks you do every week. Choose one for AI to do with you this month. Free courses, projects, and videos are available at <a href="https://inema.club" target="_blank" rel="noopener">inema.club</a>, right on the internet.</p></div>
+    <div class="card"><h3>🎓 Learn for free</h3><p>Write down your field and three tasks you do every week. Choose one for AI to do with you this month. Free courses, projects, and videos are available at <a href="https://ARCKHÉ AI" target="_blank" rel="noopener">ARCKHÉ AI</a>, right on the internet.</p></div>
   </div>
-  <div class="card" style="margin-top:16px"><h3>💬 What about you?</h3><p>What field do you work in, and what are you already doing to prepare? Share it with the <a href="https://inema.club" target="_blank" rel="noopener">inema.club</a> community.</p></div>
+  <div class="card" style="margin-top:16px"><h3>💬 What about you?</h3><p>What field do you work in, and what are you already doing to prepare? Share it with the <a href="https://ARCKHÉ AI" target="_blank" rel="noopener">ARCKHÉ AI</a> community.</p></div>
 </div></section>
 
 <div id="tecnico" class="techhead"><div class="wrap">
@@ -228,7 +228,7 @@
   <div class="step"><div class="b">1</div><div>
     <h3>Download the kit</h3>
     <p>Using git, or the "Code → Download ZIP" button on GitHub.</p>
-<pre><span class="k">git clone https://github.com/inematds/caminho-seguro</span>
+<pre><span class="k">git clone https://github.com/linnoff88-dev/caminho-seguro</span>
 <span class="k">cd caminho-seguro</span></pre>
   </div></div>
   <div class="step"><div class="b">2</div><div>
@@ -257,7 +257,7 @@
 <section id="exemplos"><div class="wrap">
   <span class="chip">Example</span>
   <h2>A family of 4</h2>
-  <p class="sub">Generated with <code>--pessoas 4 --criancas 1 --idosos 1 --pets 1 --remedios --riscos enchente,apagao,digital</code> (file <a href="https://github.com/inematds/caminho-seguro/blob/main/exemplo/meu-plano-exemplo.md" target="_blank" rel="noopener">exemplo/meu-plano-exemplo.md</a>).</p>
+  <p class="sub">Generated with <code>--pessoas 4 --criancas 1 --idosos 1 --pets 1 --remedios --riscos enchente,apagao,digital</code> (file <a href="https://github.com/linnoff88-dev/caminho-seguro/blob/main/exemplo/meu-plano-exemplo.md" target="_blank" rel="noopener">exemplo/meu-plano-exemplo.md</a>).</p>
   <div class="card"><table style="width:100%;border-collapse:collapse;font-size:.92rem">
     <tr><th style="text-align:left;padding:6px"></th><th style="text-align:left;padding:6px">72 hours (minimum)</th><th style="text-align:left;padding:6px">14 days (target)</th></tr>
     <tr><td style="padding:6px">Drinking water</td><td style="padding:6px">24 L (5 jugs of 5 L)</td><td style="padding:6px">112 L (23 jugs of 5 L)</td></tr>
@@ -268,10 +268,10 @@
 <section id="roadmap"><div class="wrap">
   <span class="chip">Related kits</span>
   <h2>Go further</h2>
-  <p class="sub">The safe path brings together what other free INEMA kits already do.</p>
-  <div class="phase"><div class="tag">Offline</div><div class="d"><strong><a href="https://inematds.github.io/sobreviver-ia/guia/" target="_blank" rel="noopener">sobreviver-ia</a></strong><span>Wikipedia and an AI on your computer, without internet; an audit of your accounts; a 90-day plan.</span></div></div>
-  <div class="phase"><div class="tag">Work</div><div class="d"><strong><a href="https://inematds.github.io/nivel-ia/guia/" target="_blank" rel="noopener">nivel-ia</a></strong><span>Your AI level certificate (AL1 to AL5), with projections for 1, 3, and 6 months.</span></div></div>
-  <div class="phase"><div class="tag">Climate</div><div class="d"><strong>Videos of extreme events</strong><span>How to protect yourself from tornadoes, floods, and heat, on INEMA’s extreme events channel.</span></div></div>
+  <p class="sub">The safe path brings together what other free ARCKHÉ kits already do.</p>
+  <div class="phase"><div class="tag">Offline</div><div class="d"><strong><a href="https://linnoff88-dev.github.io/arckhe-/guia/" target="_blank" rel="noopener">sobreviver-ia</a></strong><span>Wikipedia and an AI on your computer, without internet; an audit of your accounts; a 90-day plan.</span></div></div>
+  <div class="phase"><div class="tag">Work</div><div class="d"><strong><a href="https://linnoff88-dev.github.io/arckhe-/guia/" target="_blank" rel="noopener">nivel-ia</a></strong><span>Your AI level certificate (AL1 to AL5), with projections for 1, 3, and 6 months.</span></div></div>
+  <div class="phase"><div class="tag">Climate</div><div class="d"><strong>Videos of extreme events</strong><span>How to protect yourself from tornadoes, floods, and heat, on ARCKHÉ’s extreme events channel.</span></div></div>
   <p class="sub" style="margin-top:18px">This does not replace guidance from your city’s Civil Defense (Brazil). This is not financial or medical advice.</p>
 </div></section>
 </div>
@@ -279,9 +279,9 @@
 <footer>
   <div class="wrap">
     <div class="pill">Python 3</div><div class="pill">offline</div><div class="pill">MIT</div>
-    <p style="margin-top:18px">caminho-seguro · free INEMA kit · 13/11/2026 ·
-      <a href="https://github.com/inematds/caminho-seguro">inematds/caminho-seguro</a> ·
-      <a href="https://inema.club">INEMA.CLUB</a></p>
+    <p style="margin-top:18px">caminho-seguro · free ARCKHÉ kit · 13/11/2026 ·
+      <a href="https://github.com/linnoff88-dev/caminho-seguro">linnoff88-dev/caminho-seguro</a> ·
+      <a href="https://ARCKHÉ AI">ARCKHÉ AI</a></p>
   </div>
 </footer>
 
@@ -303,9 +303,9 @@
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
 **The world will face disruptions often, and those who prepare will get through them with their families safe.**  
-Caminho Seguro is a free INEMA kit with 5 steps to get through the coming years of instability: extreme weather (a very strong El Niño, floods, tornadoes, heat), digital attacks, conflicts, and work changing with robots and AI.
+Caminho Seguro is a free ARCKHÉ kit with 5 steps to get through the coming years of instability: extreme weather (a very strong El Niño, floods, tornadoes, heat), digital attacks, conflicts, and work changing with robots and AI.
 
-📖 Guide: **https://inematds.github.io/caminho-seguro/guia/en/**
+📖 Guide: **https://linnoff88-dev.github.io/arckhe-/guia/en/**
 
 ![Guide banner](guia/assets/banner-en.jpg)
 
@@ -317,12 +317,12 @@ Caminho Seguro is a free INEMA kit with 5 steps to get through the coming years 
 | 2. Offline | Cash for a few days, paper, offline information, food that doesn’t depend on an app | [passos/2-fora-do-online.md](passos/2-fora-do-online.md) |
 | 3. Digital | Scams after a data breach, two-step verification by app, Registrato | [passos/3-digital.md](passos/3-digital.md) |
 | 4. Health and people | Extra medication, a family plan, neighbors, alert 40199 | [passos/4-saude-e-pessoas.md](passos/4-saude-e-pessoas.md) |
-| 5. Work | A certificate of your AI level, your next task for AI, free inema.club | [passos/5-trabalho-ia.md](passos/5-trabalho-ia.md) |
+| 5. Work | A certificate of your AI level, your next task for AI, free ARCKHÉ AI | [passos/5-trabalho-ia.md](passos/5-trabalho-ia.md) |
 
 ## Your plan in 1 minute
 
 ```bash
-git clone https://github.com/inematds/caminho-seguro && cd caminho-seguro
+git clone https://github.com/linnoff88-dev/caminho-seguro && cd caminho-seguro
 python3 caminho.py            # answers 7 questions and saves meu-plano.md
 ```
 
@@ -336,25 +336,25 @@ Python 3.9+, nothing to install, no internet required.
 
 | # | Step | Command | Who |
 |---|---|---|---|
-| 1 | Read the guide and the 5 steps | open https://inematds.github.io/caminho-seguro/guia/en/ | 🧠 you |
+| 1 | Read the guide and the 5 steps | open https://linnoff88-dev.github.io/arckhe-/guia/en/ | 🧠 you |
 | 2 | Generate your household plan | `python3 caminho.py` | ⚙️ script |
 | 3 | Assemble the 72-hour kit | Step 1 checklist in `meu-plano.md` | 🧠 you |
 | 4 | Protect your accounts | Step 3 (two-step verification by app, Registrato) | 🧠 you |
 | 5 | Make a plan with your family and print the fridge sheet | Step 4 | 🧠 you |
-| 6 | Measure your AI level | Certificate from the [nivel-ia](https://inematds.github.io/nivel-ia/guia/#certificado) kit | ⚙️ script / 🤖 Claude Code or Codex |
+| 6 | Measure your AI level | Certificate from the [nivel-ia](https://linnoff88-dev.github.io/arckhe-/guia/#certificado) kit | ⚙️ script / 🤖 Claude Code or Codex |
 | 7 | Reach 14 days and review every 6 months | Run `python3 caminho.py` again | 🧠 you |
 | 8 | Test the kit (for those working with the code) | `python3 -m pytest -q tests` | ⚙️ script |
 
 ## Related kits
 
-- [sobreviver-ia](https://inematds.github.io/sobreviver-ia/guia/) — Offline Wikipedia and AI, account audit, 90-day plan.
-- [nivel-ia](https://inematds.github.io/nivel-ia/guia/) — A certificate of your AI level.
+- [sobreviver-ia](https://linnoff88-dev.github.io/arckhe-/guia/) — Offline Wikipedia and AI, account audit, 90-day plan.
+- [nivel-ia](https://linnoff88-dev.github.io/arckhe-/guia/) — A certificate of your AI level.
 
 This does not replace guidance from your city’s Civil Defense. It is not financial or medical advice.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Version 1.0.0. Part of the [INEMA.CLUB](https://inema.club) ecosystem — free.
+MIT — see [LICENSE](LICENSE). Version 1.0.0. Part of the [ARCKHÉ AI](https://ARCKHÉ AI) ecosystem — free.
 
 ## Self-learning
 
